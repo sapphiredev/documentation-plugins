@@ -11,22 +11,24 @@ const documentationPrettierConfig: Options = {
 	parser: 'babel'
 };
 
-const tsCompilerOptions: CompilerOptions = {
-	module: ts.ModuleKind.ESNext,
+const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptions => ({
 	newLine: ts.NewLineKind.LineFeed,
-	moduleResolution: ts.ModuleResolutionKind.NodeJs,
-	target: ts.ScriptTarget.ESNext,
 	removeComments: false,
 	esModuleInterop: true,
-	pretty: true
-};
+	pretty: true,
+	...overrideOptions,
+	module: ts.ModuleKind.ESNext,
+	moduleResolution: ts.ModuleResolutionKind.NodeJs,
+	target: ts.ScriptTarget.ESNext
+});
 
 /**
  * Transpiles input TypeScript code to ESM code.
  * @param code The code to transpile
  * @returns Input code transpiled to ESM
  */
-const tsToEsm = (code: string): ts.TranspileOutput => ts.transpileModule(code, { reportDiagnostics: false, compilerOptions: tsCompilerOptions });
+const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCompilerOptions'>): ts.TranspileOutput =>
+	ts.transpileModule(code, { reportDiagnostics: false, compilerOptions: makeTsCompilerOptions(options.typescriptCompilerOptions) });
 
 /**
  * Transforms input ESM code to CJS code.
@@ -68,7 +70,7 @@ const transformNode = (node: any, options: PluginOptions) => {
 	const groupIdProp = options.sync ? 'groupId="ts2esm2cjs" ' : '';
 
 	const tsCode = escapeNewLines(node.value);
-	const esmCode = tsToEsm(tsCode).outputText;
+	const esmCode = tsToEsm(tsCode, { typescriptCompilerOptions: options.typescriptCompilerOptions }).outputText;
 	const cjsCode = esmToCjs(esmCode);
 
 	const [, jsHighlight, tsHighlight] = node.meta.split('|');
@@ -128,9 +130,16 @@ const nodeForImport = {
 export interface PluginOptions {
 	sync?: boolean;
 	prettierOptions?: Options;
+	typescriptCompilerOptions?: CompilerOptions;
 }
 
-export default ({ sync = true, prettierOptions = {} }: PluginOptions = { sync: true, prettierOptions: {} }) => {
+export default (
+	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
+		sync: true,
+		prettierOptions: {},
+		typescriptCompilerOptions: {}
+	}
+) => {
 	let transformed = false;
 	let alreadyImported = false;
 
@@ -141,7 +150,7 @@ export default ({ sync = true, prettierOptions = {} }: PluginOptions = { sync: t
 
 		if (matchNode(node)) {
 			transformed = true;
-			return transformNode(node, { sync, prettierOptions });
+			return transformNode(node, { sync, prettierOptions, typescriptCompilerOptions });
 		}
 
 		if (Array.isArray(node.children)) {

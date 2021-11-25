@@ -124,6 +124,25 @@ The output JS and ESM code is formatted using Prettier. The default configuratio
 
 You can customize this by passing `prettierConfig` to the plugin options.
 
+### TypeScript compiler options
+
+The ESM code is transpiled from TypeScript using the TypeScript compiler with the following base configuration:
+
+```json
+{
+  "newLine": "lf",
+  "removeComments": false,
+  "esModuleInterop": true,
+  "pretty": true,
+  "module": "ESNext",
+  "moduleResolution": "Node",
+  "target": "ESNext"
+}
+```
+
+You can customize this by passing `typescriptCompilerOptions` to the plugin options. However, you cannot customize the
+`module`, `moduleResolution`, or `target` options.
+
 ## Buy us some doughnuts
 
 Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are
