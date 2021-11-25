@@ -1,0 +1,63 @@
+{
+	"name": "@sapphire/docusaurus-plugin-ts2esm2cjs",
+	"version": "0.0.0",
+	"description": "Docusaurus Remark plugin for converting TypeScript code to ESM and CJS code",
+	"author": "@sapphire",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js"
+	},
+	"scripts": {
+		"lint": "eslint src --ext ts --fix",
+		"build": "tsc -b src && gen-esm-wrapper dist/index.js dist/index.mjs",
+		"clean": "tsc -b src --clean",
+		"watch": "tsc -b src -w",
+		"prepublishOnly": "yarn build"
+	},
+	"dependencies": {
+		"@sapphire/prettier-config": "^1.2.4",
+		"esm-to-cjs": "^1.2.0",
+		"prettier": "^2.5.0",
+		"tslib": "^2.3.1",
+		"typescript": "^4.5.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sapphiredev/documentation-plugins.git",
+		"directory": "packages/ts2esm2cjs"
+	},
+	"files": [
+		"dist",
+		"!dist/*.tsbuildinfo"
+	],
+	"engines": {
+		"node": ">=v16.6.0",
+		"npm": ">=7.0.0"
+	},
+	"keywords": [
+		"docusaurus",
+		"docusaurus-plugin",
+		"@sapphire",
+		"typescript",
+		"ts",
+		"esm",
+		"cjs",
+		"discord",
+		"sapphire",
+		"discordjs"
+	],
+	"bugs": {
+		"url": "https://github.com/sapphiredev/documentation-plugins/issues"
+	},
+	"homepage": "https://www.sapphirejs.dev",
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@types/prettier": "^2"
+	}
+}
