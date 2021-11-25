@@ -1,3 +1,14 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.1 (2021-11-25)
+
+### Bug Fixes
+
+-   **typedoc-djs-links:** move to new repository ([e85bc6a](https://github.com/sapphiredev/documentation-plugins/commit/e85bc6a74621fd0baec80610e1751c8842e646fc))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
