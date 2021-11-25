@@ -56,6 +56,5 @@
 	"resolutions": {
 		"acorn": "^8.6.0"
 	},
-	"prettier": "@sapphire/prettier-config",
 	"packageManager": "yarn@3.1.0"
 }

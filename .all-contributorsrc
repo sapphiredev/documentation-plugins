@@ -3,12 +3,7 @@
 	"projectOwner": "sapphiredev",
 	"repoType": "github",
 	"repoHost": "https://github.com",
-	"files": [
-		"README.md",
-		"packages/ts2esm2cjs/README.md",
-		"packages/npm2yarn2pnpm/README.md",
-		"packages/typedoc-djs-links/README.md"
-	],
+	"files": ["README.md", "packages/ts2esm2cjs/README.md", "packages/npm2yarn2pnpm/README.md", "packages/typedoc-djs-links/README.md"],
 	"imageSize": 100,
 	"commit": true,
 	"commitConvention": "angular",

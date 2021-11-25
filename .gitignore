@@ -28,17 +28,6 @@ test_out/
 *.7z
 *.rar
 
-# Ignore JavaScript files
-**/*.js
-**/*.mjs
-**/*.js.map
-**/*.d.ts
-**/*.d.ts.map
-**/*.tsbuildinfo
-!packages/**/src/**/*.d.ts
-!packages/**/register*
-!**/scripts/*.mjs
-
 # Ignore heapsnapshot and log files
 *.heapsnapshot
 *.log

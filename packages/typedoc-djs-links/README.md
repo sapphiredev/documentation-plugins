@@ -13,17 +13,21 @@
 
 ## Description
 
-This is a plugin for [typedoc](https://typedoc.org) that ad ds support for linking references to DiscordJS Classes and Interfaces to their documentation pages on https://discord.js.org.
+This is a plugin for [typedoc](https://typedoc.org) that ad ds support for linking references to DiscordJS Classes and
+Interfaces to their documentation pages on https://discord.js.org.
 
-If you find any links missing please set `--logLevel Verbose` when running TypeDoc. This will print out when failing to resolve a symbol to a page on the DiscordJS website. Pull requests to fix failed resolution are welcome!
+If you find any links missing please set `--logLevel Verbose` when running TypeDoc. This will print out when failing to
+resolve a symbol to a page on the DiscordJS website. Pull requests to fix failed resolution are welcome!
 
 This plugin is designed to work with Typedoc version 0.22.x
 
 ## Buy us some doughnuts
 
-Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
+Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are
+amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
 
-We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
+We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub Sponsorships. You can use the buttons
+below to donate through your method of choice.
 
 |   Donate With   |                       Address                       |
 | :-------------: | :-------------------------------------------------: |
@@ -50,4 +54,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome!
