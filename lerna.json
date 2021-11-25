@@ -1,0 +1,23 @@
+{
+	"packages": ["packages/*"],
+	"version": "independent",
+	"npmClient": "yarn",
+	"useWorkspaces": true,
+	"command": {
+		"publish": {
+			"conventionalCommits": true,
+			"push": true
+		},
+		"version": {
+			"allowBranch": "main",
+			"conventionalCommits": true,
+			"push": true,
+			"createRelease": "github",
+			"message": "chore(release): publish"
+		},
+		"create": {
+			"license": "MIT",
+			"keywords": ["sapphiredev", "plugin", "bot", "typescript", "ts", "yarn", "discord", "sapphire"]
+		}
+	}
+}

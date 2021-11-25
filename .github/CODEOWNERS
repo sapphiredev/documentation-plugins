@@ -1,0 +1,3 @@
+/packages/ts2esm2cjs/**/*.ts @favna @vladfrangu
+/packages/npm2yarn2pnpm/**/*.ts @favna @vladfrangu
+/packages/typedoc-djs-links/**/*.ts @favna

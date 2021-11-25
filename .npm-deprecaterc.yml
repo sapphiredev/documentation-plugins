@@ -1,0 +1,5 @@
+name: '*next*'
+package:
+  - 'typedoc-plugin-djs-links'
+  - '@sapphire/docusaurus-plugin-ts2esm2cjs'
+  - '@sapphire/docusaurus-plugin-npm2yarn2pnpm'

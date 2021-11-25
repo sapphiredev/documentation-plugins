@@ -1,0 +1,55 @@
+# Ignore a blackhole and the folder for development
+node_modules/
+.vs/
+.idea/
+*.iml
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Yarn files
+.yarn/install-state.gz
+.yarn/build-state.yml
+
+# Build Artifacts
+dist/
+build/
+docs/
+test_out/
+*.tsbuildinfo
+*.zip
+*.tar
+*.tar.xz
+*.tar.gz
+*.7z
+*.rar
+
+# Ignore JavaScript files
+**/*.js
+**/*.mjs
+**/*.js.map
+**/*.d.ts
+**/*.d.ts.map
+**/*.tsbuildinfo
+!packages/**/src/**/*.d.ts
+!packages/**/register*
+!**/scripts/*.mjs
+
+# Ignore heapsnapshot and log files
+*.heapsnapshot
+*.log
+coverage/
+docs/
+
+# Ignore package locks
+package-lock.json
+
+# Ignore the GH cli downloaded by workflows
+gh
+
+# Ignore the "wiki" folder so we can checkout the wiki inside the same folder
+wiki/
