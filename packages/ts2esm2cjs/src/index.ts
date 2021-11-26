@@ -175,6 +175,3 @@ export function ts2esm2cjs(
 
 	return transformer;
 }
-
-module.exports = ts2esm2cjs;
-export default ts2esm2cjs;
