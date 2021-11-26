@@ -133,13 +133,13 @@ export interface PluginOptions {
 	typescriptCompilerOptions?: CompilerOptions;
 }
 
-export default (
+export function ts2esm2cjs(
 	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
 		sync: true,
 		prettierOptions: {},
 		typescriptCompilerOptions: {}
 	}
-) => {
+) {
 	let transformed = false;
 	let alreadyImported = false;
 
@@ -174,4 +174,7 @@ export default (
 	};
 
 	return transformer;
-};
+}
+
+module.exports = ts2esm2cjs;
+export default ts2esm2cjs;
