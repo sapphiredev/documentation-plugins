@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.2...typedoc-plugin-djs-links@1.0.3) (2021-11-26)
+
+### Bug Fixes
+
+-   **typedoc-djs-links:** removed exports field from package.json ([bd9da82](https://github.com/sapphiredev/documentation-plugins/commit/bd9da82ea889a5475b74e5874b9f44d59e9ba0dd))
+
 ## [1.0.2](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.1...typedoc-plugin-djs-links@1.0.2) (2021-11-25)
 
 ### Bug Fixes
