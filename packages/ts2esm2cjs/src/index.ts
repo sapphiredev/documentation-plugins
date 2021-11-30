@@ -35,7 +35,7 @@ const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCompilerO
  * @param code The code to transform
  * @returns Input code transformed to CommonJS
  */
-const esmToCjs = (code: string): string => runTransform(code, { quote: 'single' });
+const esmToCjs = (code: string): string => runTransform(code, { quote: 'single', lenDestructure: 128, lenModuleName: 128, lenIdentifier: 128 });
 
 /**
  * Escaped new lines in code with block comments so they can be restored by {@link restoreNewLines}
