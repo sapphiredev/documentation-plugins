@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.0...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.1) (2021-11-30)
+
+### Bug Fixes
+
+-   **ts2esm2cjs:** allow longer lengths for esm to cjs ([280746c](https://github.com/sapphiredev/documentation-plugins/commit/280746cbf7120c9baddf8deac436ea0a9ba1835e))
+
 # 1.0.0 (2021-11-26)
 
 ### Bug Fixes

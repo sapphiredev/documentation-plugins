@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.1) (2021-11-30)
+
+**Note:** Version bump only for package @sapphire/docusaurus-plugin-npm2yarn2pnpm
+
 # 1.0.0 (2021-11-26)
 
 ### Bug Fixes
