@@ -6426,6 +6426,7 @@ __metadata:
     prettier: ^2.5.0
     pretty-quick: ^3.1.2
     rimraf: ^3.0.2
+    turbo: ^1.0.6
     typedoc: ^0.22.10
     typescript: ^4.5.2
   languageName: unknown
@@ -7209,6 +7210,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"turbo@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "turbo@npm:1.0.6"
+  dependencies:
+    zlib: ^1.0.5
+  bin:
+    turbo: bin/turbo
+  checksum: 83c5c47ebe1956d638089edf4024bd67c8346b52b8961dfe741fc4da2f29de98ca09ed187fdb7fcd26e49c792f09984594cd969bde5bcff2af1377daba6b0d17
+  languageName: node
+  linkType: hard
+
 "tweetnacl@npm:^0.14.3, tweetnacl@npm:~0.14.0":
   version: 0.14.5
   resolution: "tweetnacl@npm:0.14.5"
@@ -7779,5 +7791,12 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zlib@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "zlib@npm:1.0.5"
+  checksum: 5ef5693a1deb70f65845424f5ecce1ee956e50320aa438126759fd28ec8a25ae876acb3b179b4f5050427e7e0dfcd9e45bdae23f055b2d732bc2fe1dbe4da169
   languageName: node
   linkType: hard
