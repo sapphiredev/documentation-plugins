@@ -19,7 +19,7 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"@sapphire/prettier-config": "^1.2.6",
+		"@sapphire/prettier-config": "^1.2.7",
 		"esm-to-cjs": "^1.2.0",
 		"npm-to-yarn": "^1.0.1",
 		"prettier": "^2.5.0",
