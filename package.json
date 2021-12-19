@@ -6,7 +6,7 @@
 	],
 	"scripts": {
 		"clean": "rimraf \"packages/**/dist\" \"packages/**/.turbo\"",
-		"lint": "eslint packages --ext mjs,js,ts --fix",
+		"lint": "turbo run lint",
 		"format": "prettier --write \"packages/**/{src,scripts}/**/*.{mjs,ts,js}\"",
 		"build": "turbo run build",
 		"update": "yarn upgrade-interactive",
@@ -73,5 +73,5 @@
 	"resolutions": {
 		"acorn": "^8.6.0"
 	},
-	"packageManager": "yarn@3.1.0"
+	"packageManager": "yarn@3.1.1"
 }
