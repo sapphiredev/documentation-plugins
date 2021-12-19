@@ -57,8 +57,5 @@
 	"homepage": "https://www.sapphirejs.dev",
 	"publishConfig": {
 		"access": "public"
-	},
-	"devDependencies": {
-		"@types/prettier": "^2"
 	}
 }
