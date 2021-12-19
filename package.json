@@ -6,7 +6,7 @@
 	],
 	"scripts": {
 		"clean": "rimraf \"packages/**/dist\" \"packages/**/.turbo\"",
-		"lint": "turbo run lint",
+		"lint": "eslint packages --ext mjs,js,ts --fix",
 		"format": "prettier --write \"packages/**/{src,scripts}/**/*.{mjs,ts,js}\"",
 		"build": "turbo run build",
 		"update": "yarn upgrade-interactive",
