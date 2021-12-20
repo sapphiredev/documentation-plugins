@@ -23,6 +23,10 @@
 		"prettier": "^2.5.1",
 		"typescript": "^4.5.4"
 	},
+	"devDependencies": {
+		"eslint": "^8.5.0",
+		"tsup": "^5.11.6"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sapphiredev/documentation-plugins.git",
