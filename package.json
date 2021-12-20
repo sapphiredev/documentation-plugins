@@ -5,33 +5,13 @@
 		"packages/*"
 	],
 	"scripts": {
-		"clean": "rimraf \"packages/**/dist\" \"packages/**/.turbo\"",
-		"lint": "turbo run lint",
+		"clean": "rimraf \"packages/**/dist\"",
+		"lint": "yarn workspaces foreach run lint",
 		"format": "prettier --write \"packages/**/{src,scripts}/**/*.{mjs,ts,js}\"",
-		"build": "turbo run build",
-		"typecheck": "turbo run typecheck",
+		"build": "yarn workspaces foreach run build",
+		"typecheck": "yarn workspaces foreach run typecheck",
 		"update": "yarn upgrade-interactive",
 		"prepare": "husky install .github/husky"
-	},
-	"turbo": {
-		"pipeline": {
-			"build": {
-				"dependsOn": [
-					"^build"
-				],
-				"outputs": [
-					"dist/**"
-				]
-			},
-			"lint": {
-				"dependsOn": [],
-				"outputs": []
-			},
-			"typecheck": {
-				"dependsOn": [],
-				"outputs": []
-			}
-		}
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
@@ -55,7 +35,6 @@
 		"pretty-quick": "^3.1.2",
 		"rimraf": "^3.0.2",
 		"tsup": "^5.11.6",
-		"turbo": "^1.0.19",
 		"typedoc": "^0.22.10",
 		"typescript": "^4.5.4"
 	},

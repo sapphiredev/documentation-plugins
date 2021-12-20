@@ -6806,7 +6806,6 @@ __metadata:
     pretty-quick: ^3.1.2
     rimraf: ^3.0.2
     tsup: ^5.11.6
-    turbo: ^1.0.19
     typedoc: ^0.22.10
     typescript: ^4.5.4
   languageName: unknown
@@ -7675,15 +7674,6 @@ __metadata:
   dependencies:
     safe-buffer: ^5.0.1
   checksum: 05f6510358f8afc62a057b8b692f05d70c1782b70db86d6a1e0d5e28a32389e52fa6e7707b6c5ecccacc031462e4bc35af85ecfe4bbc341767917b7cf6965711
-  languageName: node
-  linkType: hard
-
-"turbo@npm:^1.0.19":
-  version: 1.0.19
-  resolution: "turbo@npm:1.0.19"
-  bin:
-    turbo: bin/turbo
-  checksum: daa069f9ec3dd43deeb38801b56cb0e933b579ae5c0974cccf0449a13155b941ea61c1bc9f56d67ba2424ff4383167b651f8dcb0ff1398464717a2fff1177c86
   languageName: node
   linkType: hard
 
