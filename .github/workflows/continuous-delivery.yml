@@ -40,7 +40,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Build all packages
-        run: yarn build --no-cache
+        run: yarn workspaces foreach run build
       - name: Bump Version & Publish
         run: |
           # Resolve the tag to be used. "next" for push events, "pr-{prNumber}" for dispatch events.

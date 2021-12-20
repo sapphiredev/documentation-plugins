@@ -20,13 +20,11 @@
 				],
 				"outputs": [
 					"dist/**"
-				],
-				"cache": false
+				]
 			},
 			"lint": {
 				"dependsOn": [],
-				"outputs": [],
-				"cache": false
+				"outputs": []
 			}
 		}
 	},
