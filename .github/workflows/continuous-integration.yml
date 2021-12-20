@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Run ESLint
-        run: yarn workspaces foreach run lint
+        run: yarn lint --fix=false
 
   Building:
     name: Compile source code
@@ -43,6 +43,6 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Typecheck all packages
-        run: yarn workspaces foreach run typecheck
+        run: yarn typecheck
       - name: Build all packages
-        run: yarn workspaces foreach run build
+        run: yarn build

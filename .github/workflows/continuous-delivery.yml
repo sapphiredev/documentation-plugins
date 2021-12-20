@@ -40,9 +40,9 @@ jobs:
       - name: Install Dependencies
         run: yarn --immutable
       - name: Typecheck all packages
-        run: yarn workspaces foreach run typecheck
+        run: yarn typecheck
       - name: Build all packages
-        run: yarn workspaces foreach run build
+        run: yarn build
       - name: Bump Version & Publish
         run: |
           # Resolve the tag to be used. "next" for push events, "pr-{prNumber}" for dispatch events.
