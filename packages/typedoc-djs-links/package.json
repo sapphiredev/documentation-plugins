@@ -13,13 +13,9 @@
 	},
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
-		"build": "tsc -b src && gen-esm-wrapper dist/index.js dist/index.mjs",
-		"clean": "tsc -b src --clean",
-		"watch": "tsc -b src -w",
+		"build": "tsup && tsc -b src",
+		"typecheck": "tsc -p tsconfig.eslint.json",
 		"prepublishOnly": "yarn build"
-	},
-	"dependencies": {
-		"tslib": "^2.3.1"
 	},
 	"repository": {
 		"type": "git",

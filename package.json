@@ -9,6 +9,7 @@
 		"lint": "turbo run lint",
 		"format": "prettier --write \"packages/**/{src,scripts}/**/*.{mjs,ts,js}\"",
 		"build": "turbo run build",
+		"typecheck": "turbo run typecheck",
 		"update": "yarn upgrade-interactive",
 		"prepare": "husky install .github/husky"
 	},
@@ -23,6 +24,10 @@
 				]
 			},
 			"lint": {
+				"dependsOn": [],
+				"outputs": []
+			},
+			"typecheck": {
 				"dependsOn": [],
 				"outputs": []
 			}
@@ -43,13 +48,13 @@
 		"eslint": "^8.5.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^4.0.0",
-		"gen-esm-wrapper": "^1.1.3",
 		"husky": "^7.0.4",
 		"lerna": "^4.0.0",
 		"lint-staged": "^12.1.3",
 		"prettier": "^2.5.1",
 		"pretty-quick": "^3.1.2",
 		"rimraf": "^3.0.2",
+		"tsup": "^5.11.6",
 		"turbo": "^1.0.19",
 		"typedoc": "^0.22.10",
 		"typescript": "^4.5.4"

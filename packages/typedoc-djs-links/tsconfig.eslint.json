@@ -1,8 +1,10 @@
 {
-	"extends": "./tsconfig.json",
+	"extends": "./src/tsconfig.json",
 	"compilerOptions": {
 		"allowJs": true,
-		"checkJs": true
+		"checkJs": true,
+		"emitDeclarationOnly": false,
+		"noEmit": true
 	},
 	"include": ["src"]
 }
