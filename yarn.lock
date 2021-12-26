@@ -4966,9 +4966,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.1.3":
-  version: 12.1.3
-  resolution: "lint-staged@npm:12.1.3"
+"lint-staged@npm:^12.1.4":
+  version: 12.1.4
+  resolution: "lint-staged@npm:12.1.4"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -4985,7 +4985,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: f42fea248f690478ddd3d15ed9dd2302c0744da6af3032d1afe6e9f3c5ff99a7f4af85bf73425d027ff3c53b8c2a4a8f2227ab3e2e1367af786d301debea4bce
+  checksum: f1f829328fbd0878e8c2100fe0968101e94903ce5acf95bae98ec6daa84c4e95f87957f9040782427be2087659f3809626ea42ba53bbe5f0036c4d3806cb313d
   languageName: node
   linkType: hard
 
@@ -6381,9 +6381,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-quick@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "pretty-quick@npm:3.1.2"
+"pretty-quick@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "pretty-quick@npm:3.1.3"
   dependencies:
     chalk: ^3.0.0
     execa: ^4.0.0
@@ -6395,7 +6395,7 @@ __metadata:
     prettier: ">=2.0.0"
   bin:
     pretty-quick: bin/pretty-quick.js
-  checksum: c4b0de1829c63dfb1c2cb509892410fdba8fd2490b5ef9e1b34c418bc83f9205a7b6559fbf5e349d638e9c0ad1416fb35581d0e3eef2d45ee7093fb0838eaadd
+  checksum: 28bdc32571e6308e049497f58a9245f272275973782b6ed7fbcf98937101cc605a81b3ab48629dba4687b7e86c87a3733febacdc0746ca4da5d1c80a0b88cf45
   languageName: node
   linkType: hard
 
@@ -6901,11 +6901,11 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     husky: ^7.0.4
     lerna: ^4.0.0
-    lint-staged: ^12.1.3
+    lint-staged: ^12.1.4
     prettier: ^2.5.1
-    pretty-quick: ^3.1.2
+    pretty-quick: ^3.1.3
     rimraf: ^3.0.2
-    tsup: ^5.11.6
+    tsup: ^5.11.9
     typedoc: ^0.22.10
     typescript: ^4.5.4
   languageName: unknown
@@ -7727,9 +7727,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsup@npm:^5.11.6":
-  version: 5.11.6
-  resolution: "tsup@npm:5.11.6"
+"tsup@npm:^5.11.9":
+  version: 5.11.9
+  resolution: "tsup@npm:5.11.9"
   dependencies:
     bundle-require: ^2.1.8
     cac: ^6.7.12
@@ -7746,14 +7746,14 @@ __metadata:
     sucrase: ^3.20.3
     tree-kill: ^1.2.2
   peerDependencies:
-    typescript: ^4.2.3
+    typescript: ^4.1.0
   peerDependenciesMeta:
     typescript:
       optional: true
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: 05adf75b40ed7354146469f54938d174f80f1eed75ba44f9fd57f006a61a6aeea9dca9fab668d6fc2b6ed074c7e202a299a61d5bef838921096588e719a3f7f0
+  checksum: d5a3afb64bcee90fb5e3723bc4978bee9dc6f5c4d943dc3dcd56196f67c9e59a6f3e3599899365ff344e6f0fa082936fde7e7307d0e9a71493ac5345d41f7058
   languageName: node
   linkType: hard
 
