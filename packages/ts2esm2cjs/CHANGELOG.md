@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.1...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.2) (2022-01-12)
+
+### Bug Fixes
+
+-   **ts2esm2cjs:** fixed imports that have `as` in their name ([147c85d](https://github.com/sapphiredev/documentation-plugins/commit/147c85db866ac0544b4bcc62aa5e54a9f3009903))
+
+### Reverts
+
+-   Revert "ci: try adding extra dev deps for ci" ([de49260](https://github.com/sapphiredev/documentation-plugins/commit/de49260d4d8c4be4bb27d53f13472946e4cd3700))
+
 ## [1.0.1](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.0...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.1) (2021-11-30)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.3...typedoc-plugin-djs-links@1.0.4) (2022-01-12)
+
+### Reverts
+
+-   Revert "ci: try adding extra dev deps for ci" ([de49260](https://github.com/sapphiredev/documentation-plugins/commit/de49260d4d8c4be4bb27d53f13472946e4cd3700))
+
 ## [1.0.3](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.2...typedoc-plugin-djs-links@1.0.3) (2021-11-26)
 
 ### Bug Fixes
