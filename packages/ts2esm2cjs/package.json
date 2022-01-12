@@ -19,7 +19,6 @@
 	},
 	"dependencies": {
 		"@sapphire/prettier-config": "^1.2.7",
-		"esm-to-cjs": "^1.2.0",
 		"prettier": "^2.5.1",
 		"typescript": "^4.5.4"
 	},
