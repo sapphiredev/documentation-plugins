@@ -1,6 +1,6 @@
 {
 	"name": "@sapphire/docusaurus-plugin-ts2esm2cjs",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Docusaurus Remark plugin for converting TypeScript code to ESM and CJS code",
 	"author": "@sapphire",
 	"license": "MIT",

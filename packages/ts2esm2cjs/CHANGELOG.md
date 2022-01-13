@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.2...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.3) (2022-01-13)
+
+### Bug Fixes
+
+-   **ts2esm2cjs:** switch back to published package of esm-to-cjs ([0ca3884](https://github.com/sapphiredev/documentation-plugins/commit/0ca388495cf91a7c4ab19c24bd48e0d992e0f821))
+
+### Reverts
+
+-   Revert "fix(ts2esm2cjs): fixed imports that have `as` in their name" ([684b297](https://github.com/sapphiredev/documentation-plugins/commit/684b2975f08df8a00ed2a6f5576770e6c7168383))
+
 ## [1.0.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.1...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.2) (2022-01-12)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.2...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.3) (2022-01-13)
+
+### Bug Fixes
+
+-   **npm2yarn2pnpm:** cleanup dependencies ([fe52cac](https://github.com/sapphiredev/documentation-plugins/commit/fe52cacfc0fd28a0de49464aa63029eea35d7ddf))
+
 ## [1.0.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.1...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.2) (2022-01-12)
 
 ### Reverts
