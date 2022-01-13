@@ -1,9 +1,13 @@
-interface RunTransformOptions {
-	quote?: 'single' | 'double';
-	lenDestructure?: number;
-	lenModuleName?: number;
-	lenIdentifier?: number;
-	indent?: number;
-}
+declare module 'esm-to-cjs' {
+	interface RunTransformOptions {
+		quote?: 'single' | 'double';
+		lenDestructure?: number;
+		lenModuleName?: number;
+		lenIdentifier?: number;
+		indent?: number;
+	}
 
-export function runTransform(code: string, options: RunTransformOptions): string;
+	function runTransform(code: string, options: RunTransformOptions): string;
+
+	export { runTransform };
+}

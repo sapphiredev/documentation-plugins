@@ -1,9 +1,9 @@
 import sapphirePrettierConfig from '@sapphire/prettier-config';
-import { runTransform } from './esmToCjs';
+import { runTransform } from 'esm-to-cjs';
 import prettier, { Options } from 'prettier';
 import ts, { CompilerOptions } from 'typescript';
 
-export const documentationPrettierConfig: Options = {
+const documentationPrettierConfig: Options = {
 	...sapphirePrettierConfig,
 	tabWidth: 2,
 	useTabs: false,
@@ -11,7 +11,7 @@ export const documentationPrettierConfig: Options = {
 	parser: 'babel'
 };
 
-export const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptions => ({
+const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptions => ({
 	newLine: ts.NewLineKind.LineFeed,
 	removeComments: false,
 	esModuleInterop: true,
@@ -27,7 +27,7 @@ export const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): Compil
  * @param code The code to transpile
  * @returns Input code transpiled to ESM
  */
-export const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCompilerOptions'>): ts.TranspileOutput =>
+const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCompilerOptions'>): ts.TranspileOutput =>
 	ts.transpileModule(code, { reportDiagnostics: false, compilerOptions: makeTsCompilerOptions(options.typescriptCompilerOptions) });
 
 /**
@@ -35,22 +35,21 @@ export const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCo
  * @param code The code to transform
  * @returns Input code transformed to CommonJS
  */
-export const esmToCjs = (code: string): string =>
-	runTransform(code, { quote: 'single', lenDestructure: 512, lenModuleName: 512, lenIdentifier: 512 });
+const esmToCjs = (code: string): string => runTransform(code, { quote: 'single', lenDestructure: 128, lenModuleName: 128, lenIdentifier: 128 });
 
 /**
  * Escaped new lines in code with block comments so they can be restored by {@link restoreNewLines}
  * @param code The code to escape new lines in
  * @returns The same code but with new lines escaped using block comments
  */
-export const escapeNewLines = (code: string) => code.replace(/\n\n/g, '\n/* :newline: */');
+const escapeNewLines = (code: string) => code.replace(/\n\n/g, '\n/* :newline: */');
 
 /**
  * Reverses {@link escapeNewLines} and restores new lines
  * @param code The code with escaped new lines
  * @returns The same code with new lines restored
  */
-export const restoreNewLines = (code: string): string => code.replace(/\/\* :newline: \*\//g, '\n');
+const restoreNewLines = (code: string): string => code.replace(/\/\* :newline: \*\//g, '\n');
 
 /**
  * Formats the code using Prettier
@@ -58,7 +57,7 @@ export const restoreNewLines = (code: string): string => code.replace(/\/\* :new
  * @param prettierConfig Additional prettier options to use for formatting
  * @returns Prettier formatted code
  */
-export const prettierFormatCode = (code: string, prettierConfig?: Options) =>
+const prettierFormatCode = (code: string, prettierConfig?: Options) =>
 	prettier.format(code, { ...documentationPrettierConfig, ...prettierConfig }).slice(0, -1);
 
 /**
