@@ -17,22 +17,12 @@ node_modules/
 
 # Build Artifacts
 dist/
-build/
-docs/
-test_out/
+.turbo/
 *.tsbuildinfo
-*.zip
-*.tar
-*.tar.xz
-*.tar.gz
-*.7z
-*.rar
 
 # Ignore heapsnapshot and log files
 *.heapsnapshot
 *.log
-coverage/
-docs/
 
 # Ignore package locks
 package-lock.json

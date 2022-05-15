@@ -5,23 +5,17 @@
 	"author": "@sapphire",
 	"license": "MIT",
 	"main": "dist/index.js",
-	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
-	"exports": {
-		"import": "./dist/index.mjs",
-		"require": "./dist/index.js",
-		"types": "./dist/index.d.ts"
-	},
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
-		"build": "tsup && tsc -b src",
-		"typecheck": "tsc -p tsconfig.eslint.json",
+		"build": "tsc -b src",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
 		"check-update": "cliff-jumper --dry-run"
 	},
 	"dependencies": {
 		"npm-to-yarn": "^1.0.1",
+		"tslib": "^2.4.0",
 		"unist-util-visit": "^2.0.3"
 	},
 	"repository": {
@@ -31,7 +25,6 @@
 	},
 	"files": [
 		"dist/**/*.js*",
-		"dist/**/*.mjs*",
 		"dist/**/*.d*"
 	],
 	"engines": {
@@ -58,7 +51,6 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"tsup": "^5.12.7",
 		"typescript": "^4.6.4"
 	}
 }

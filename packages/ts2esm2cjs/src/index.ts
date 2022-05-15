@@ -134,13 +134,13 @@ const nodeForImport: Literal = {
 	value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
 };
 
-export interface PluginOptions {
+interface PluginOptions {
 	sync?: boolean;
 	prettierOptions?: Options;
 	typescriptCompilerOptions?: CompilerOptions;
 }
 
-export const ts2esm2cjs: Plugin<[PluginOptions?]> =
+const ts2esm2cjs: Plugin<[PluginOptions?]> =
 	(
 		{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
 			sync: true,
@@ -176,3 +176,5 @@ export const ts2esm2cjs: Plugin<[PluginOptions?]> =
 			(root as Parent).children.unshift(nodeForImport);
 		}
 	};
+
+export = ts2esm2cjs;

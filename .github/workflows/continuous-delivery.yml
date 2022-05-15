@@ -40,8 +40,6 @@ jobs:
           registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Typecheck all packages
-        run: yarn typecheck
       - name: Build all packages
         run: yarn build
       - name: Bump Versions & Publish

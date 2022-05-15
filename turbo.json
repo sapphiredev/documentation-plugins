@@ -15,10 +15,6 @@
 		"check-update": {
 			"dependsOn": [],
 			"outputs": []
-		},
-		"typecheck": {
-			"dependsOn": [],
-			"outputs": []
 		}
 	}
 }
