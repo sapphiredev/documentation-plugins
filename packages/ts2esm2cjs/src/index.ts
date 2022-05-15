@@ -1,7 +1,11 @@
 import sapphirePrettierConfig from '@sapphire/prettier-config';
 import { runTransform } from 'esm-to-cjs';
+import type { Code, Content, Literal } from 'mdast';
 import prettier, { Options } from 'prettier';
 import ts, { CompilerOptions } from 'typescript';
+import type { Plugin } from 'unified';
+import type { Node, Parent } from 'unist';
+import visit from 'unist-util-visit';
 
 const documentationPrettierConfig: Options = {
 	...sapphirePrettierConfig,
@@ -63,7 +67,7 @@ const prettierFormatCode = (code: string, prettierConfig?: Options) =>
 /**
  * Transforms a Docusaurus node from TypeScript to ESM and CJS
  * @param node The Docusaurus node to transform
- * @param isSync Whether the transform should synchronize between all entries of this type
+ * @param options The plugin options to pass to the transformer
  * @returns The transformed node in the form of Tabs.
  */
 const transformNode = (node: any, options: PluginOptions) => {
@@ -91,7 +95,7 @@ const transformNode = (node: any, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: jsHighlight,
+			meta: `${jsHighlight} showLineNumbers`,
 			value: prettierFormatCode(restoreNewLines(cjsCode), options.prettierOptions)
 		},
 		{
@@ -101,7 +105,7 @@ const transformNode = (node: any, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: jsHighlight,
+			meta: `${jsHighlight} showLineNumbers`,
 			value: prettierFormatCode(restoreNewLines(esmCode), options.prettierOptions)
 		},
 		{
@@ -111,18 +115,21 @@ const transformNode = (node: any, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: tsHighlight,
+			meta: `${tsHighlight} showLineNumbers`,
 			value: node.value
 		},
 		{
 			type: 'jsx',
 			value: '</TabItem>\n</Tabs>'
 		}
-	];
+	] as Content[];
 };
 
-const matchNode = (node: any) => node.type === 'code' && typeof node.meta === 'string' && node.meta.startsWith('ts2esm2cjs');
-const nodeForImport = {
+const isImport = (node: Node): node is Literal => node.type === 'import';
+const isParent = (node: Node): node is Parent => Array.isArray((node as Parent).children);
+const matchNode = (node: Node): node is Node =>
+	node.type === 'code' && typeof (node as Code).meta === 'string' && (node as Code).meta!.startsWith('ts2esm2cjs');
+const nodeForImport: Literal = {
 	type: 'import',
 	value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
 };
@@ -133,45 +140,39 @@ export interface PluginOptions {
 	typescriptCompilerOptions?: CompilerOptions;
 }
 
-export function ts2esm2cjs(
-	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
-		sync: true,
-		prettierOptions: {},
-		typescriptCompilerOptions: {}
-	}
-) {
-	let transformed = false;
-	let alreadyImported = false;
-
-	const transformer = (node: any) => {
-		if (node.type === 'import' && node.value.includes('@theme/Tabs')) {
-			alreadyImported = true;
+export const ts2esm2cjs: Plugin<[PluginOptions?]> =
+	(
+		{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
+			sync: true,
+			prettierOptions: {},
+			typescriptCompilerOptions: {}
 		}
+	) =>
+	(root) => {
+		let transformed = false;
+		let alreadyImported = false;
 
-		if (matchNode(node)) {
-			transformed = true;
-			return transformNode(node, { sync, prettierOptions, typescriptCompilerOptions });
-		}
-
-		if (Array.isArray(node.children)) {
-			let index = 0;
-			while (index < node.children.length) {
-				const result = transformer(node.children[index]);
-				if (result) {
-					node.children.splice(index, 1, ...result);
-					index += result.length;
-				} else {
-					index += 1;
+		visit(root, (node: Node) => {
+			if (isImport(node) && node.value.includes('@theme/Tabs')) {
+				alreadyImported = true;
+			}
+			if (isParent(node)) {
+				let index = 0;
+				while (index < node.children.length) {
+					const child = node.children[index]!;
+					if (matchNode(child)) {
+						const result = transformNode(child, { sync, prettierOptions, typescriptCompilerOptions });
+						node.children.splice(index, 1, ...result);
+						index += result.length;
+						transformed = true;
+					} else {
+						index += 1;
+					}
 				}
 			}
-		}
+		});
 
-		if (node.type === 'root' && transformed && !alreadyImported) {
-			node.children.unshift(nodeForImport);
+		if (transformed && !alreadyImported) {
+			(root as Parent).children.unshift(nodeForImport);
 		}
-
-		return null;
 	};
-
-	return transformer;
-}
