@@ -70,27 +70,26 @@ const prettierFormatCode = (code: string, prettierConfig?: Options) =>
  * @param options The plugin options to pass to the transformer
  * @returns The transformed node in the form of Tabs.
  */
-const transformNode = (node: any, options: PluginOptions) => {
-	const groupIdProp = options.sync ? 'groupId="ts2esm2cjs" ' : '';
+const transformNode = (node: Code, options: PluginOptions) => {
+	const groupIdProp = options.sync ? ' groupId="ts2esm2cjs"' : '';
 
 	const tsCode = escapeNewLines(node.value);
 	const esmCode = tsToEsm(tsCode, { typescriptCompilerOptions: options.typescriptCompilerOptions }).outputText;
 	const cjsCode = esmToCjs(esmCode);
 
-	const [, jsHighlight, tsHighlight] = node.meta.split('|');
+	const [, jsHighlight, tsHighlight] = (node.meta ?? '').split('|');
 
 	return [
 		{
 			type: 'jsx',
-			value:
-				`<Tabs defaultValue="typescript" ${groupIdProp}` +
-				`values={[
-    { label: 'JavaScript', value: 'javascript', },
-    { label: 'ESM', value: 'esm', },
-    { label: 'TypeScript', value: 'typescript', },
-  ]}
->
-<TabItem value="javascript">`
+			value: `<Tabs${groupIdProp}
+						defaultValue="typescript"
+						values={[
+							{ label: "JavaScript", value: "javascript" },
+							{ label: "ESM", value: "esm" },
+							{ label: "TypeScript", value: "typescript" },
+						]}
+			>\n<TabItem value="javascript">`
 		},
 		{
 			type: node.type,
@@ -127,31 +126,25 @@ const transformNode = (node: any, options: PluginOptions) => {
 
 const isImport = (node: Node): node is Literal => node.type === 'import';
 const isParent = (node: Node): node is Parent => Array.isArray((node as Parent).children);
-const matchNode = (node: Node): node is Node =>
-	node.type === 'code' && typeof (node as Code).meta === 'string' && (node as Code).meta!.startsWith('ts2esm2cjs');
+const matchNode = (node: Node): node is Code =>
+	node.type === 'code' && typeof (node as Code).meta === 'string' && ((node as Code).meta ?? '').startsWith('ts2esm2cjs');
 const nodeForImport: Literal = {
 	type: 'import',
 	value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
 };
 
-interface PluginOptions {
+export interface PluginOptions {
 	sync?: boolean;
 	prettierOptions?: Options;
 	typescriptCompilerOptions?: CompilerOptions;
 }
 
-const ts2esm2cjs: Plugin<[PluginOptions?]> =
-	(
-		{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} }: PluginOptions = {
-			sync: true,
-			prettierOptions: {},
-			typescriptCompilerOptions: {}
-		}
-	) =>
-	(root) => {
+export const ts2esm2cjs: Plugin<[PluginOptions?]> = (
+	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} } = { sync: true, prettierOptions: {}, typescriptCompilerOptions: {} }
+) => {
+	return (root) => {
 		let transformed = false;
 		let alreadyImported = false;
-
 		visit(root, (node: Node) => {
 			if (isImport(node) && node.value.includes('@theme/Tabs')) {
 				alreadyImported = true;
@@ -171,10 +164,8 @@ const ts2esm2cjs: Plugin<[PluginOptions?]> =
 				}
 			}
 		});
-
 		if (transformed && !alreadyImported) {
 			(root as Parent).children.unshift(nodeForImport);
 		}
 	};
-
-export = ts2esm2cjs;
+};
