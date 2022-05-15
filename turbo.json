@@ -1,0 +1,28 @@
+{
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"]
+		},
+		"lint": {
+			"dependsOn": [],
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": [],
+			"outputs": ["coverage/**"]
+		},
+		"bump": {
+			"dependsOn": [],
+			"outputs": ["CHANGELOG.md"]
+		},
+		"check-update": {
+			"dependsOn": [],
+			"outputs": []
+		},
+		"typecheck": {
+			"dependsOn": [],
+			"outputs": []
+		}
+	}
+}

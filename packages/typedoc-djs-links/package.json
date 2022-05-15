@@ -16,7 +16,9 @@
 		"lint": "eslint src --ext ts --fix",
 		"build": "tsup && tsc -b src",
 		"typecheck": "tsc -p tsconfig.eslint.json",
-		"prepublishOnly": "yarn build"
+		"prepack": "yarn build",
+		"bump": "cliff-jumper",
+		"check-update": "cliff-jumper --dry-run"
 	},
 	"repository": {
 		"type": "git",
@@ -24,8 +26,9 @@
 		"directory": "packages/typedoc-djs-links"
 	},
 	"files": [
-		"dist",
-		"!dist/*.tsbuildinfo"
+		"dist/**/*.js*",
+		"dist/**/*.mjs*",
+		"dist/**/*.d*"
 	],
 	"engines": {
 		"node": ">=v16.6.0",
@@ -50,5 +53,9 @@
 	"homepage": "https://www.sapphirejs.dev",
 	"publishConfig": {
 		"access": "public"
+	},
+	"devDependencies": {
+		"tsup": "^5.12.7",
+		"typescript": "^4.6.4"
 	}
 }

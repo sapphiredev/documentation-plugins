@@ -1,0 +1,5 @@
+name: typedoc-plugin-djs-links
+monoRepo: true
+packagePath: packages/typedoc-djs-links
+commitMessageTemplate: 'chore({{name}}): release {{name}}@{{new-version}}'
+tagTemplate: '{{name}}@{{new-version}}'
