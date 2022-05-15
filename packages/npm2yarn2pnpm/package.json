@@ -19,7 +19,8 @@
 		"prepublishOnly": "yarn build"
 	},
 	"dependencies": {
-		"npm-to-yarn": "^1.0.1"
+		"npm-to-yarn": "^1.0.1",
+		"unist-util-visit": "^2.0.3"
 	},
 	"repository": {
 		"type": "git",
