@@ -94,7 +94,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: `${jsHighlight} showLineNumbers`,
+			meta: `${jsHighlight}`,
 			value: prettierFormatCode(restoreNewLines(cjsCode), options.prettierOptions)
 		},
 		{
@@ -104,7 +104,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: `${jsHighlight} showLineNumbers`,
+			meta: `${jsHighlight}`,
 			value: prettierFormatCode(restoreNewLines(esmCode), options.prettierOptions)
 		},
 		{
@@ -114,7 +114,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 		{
 			type: node.type,
 			lang: node.lang,
-			meta: `${tsHighlight} showLineNumbers`,
+			meta: `${tsHighlight}`,
 			value: node.value
 		},
 		{
