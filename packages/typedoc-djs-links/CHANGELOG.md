@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+# [typedoc-plugin-djs-links@1.2.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.4...typedoc-plugin-djs-links@1.2.0) - (2022-06-29)
+
+## 🐛 Bug Fixes
+
+- Restore tsup (reverts 7411ff7) ([7df536b](https://github.com/sapphiredev/documentation-plugins/commit/7df536bd871b45d0cfa65816684bc691b4735bc0))
+- Remove tsup ([7411ff7](https://github.com/sapphiredev/documentation-plugins/commit/7411ff79624eec777519a2a049c8d3f026871cac))
+
+## 🚀 Features
+
+- Allow module: NodeNext ([8221bc2](https://github.com/sapphiredev/documentation-plugins/commit/8221bc2668fd1ad9c2e80c3c6a1503ae27bfc632))
+
 ## [1.0.4](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.3...typedoc-plugin-djs-links@1.0.4) (2022-01-12)
 
 ### Reverts
