@@ -313,23 +313,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@favware/cliff-jumper@npm:^1.8.3":
-  version: 1.8.3
-  resolution: "@favware/cliff-jumper@npm:1.8.3"
+"@favware/cliff-jumper@npm:^1.8.5":
+  version: 1.8.5
+  resolution: "@favware/cliff-jumper@npm:1.8.5"
   dependencies:
-    "@sapphire/result": ^1.1.1
+    "@sapphire/result": ^2.0.0
     "@sapphire/utilities": ^3.6.2
-    colorette: ^2.0.17
+    colorette: ^2.0.19
     commander: ^9.3.0
     conventional-changelog-angular: ^5.0.13
     conventional-recommended-bump: ^6.1.0
     js-yaml: ^4.1.0
     semver: ^7.3.7
-    typescript: ^4.7.3
+    typescript: ^4.7.4
   bin:
     cj: ./dist/cli.js
     cliff-jumper: ./dist/cli.js
-  checksum: 817214fc1cbc583ed4337a4edb5fba8da833ae8b1b08f1252cd49d31e6f8ab1059f965df8e10b89dd6525413850e49452d684d4c50e320933f39b44a043caad0
+  checksum: afdf247292089b79a17aa9d5b05f6d4077739e044aa0ef8125caa7030064bbb648c6f36b294546d66122ab2a8371af93d9fddfa768721ef40231b5e03b27f5ce
   languageName: node
   linkType: hard
 
@@ -448,6 +448,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sapphire/docusaurus-plugin-npm2yarn2pnpm@workspace:packages/npm2yarn2pnpm"
   dependencies:
+    "@favware/cliff-jumper": ^1.8.5
     npm-to-yarn: ^1.0.1
     tsup: ^6.1.2
     typescript: ^4.7.4
@@ -501,10 +502,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/result@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@sapphire/result@npm:1.1.1"
-  checksum: ccb3fcd051523f439c5f9871a251273e10ffeebcb5d6817c1c7efb24b60d8866fd5a781e0c77fe15a66a2dd5c5831b00258e70c76b6a82bb43bb150e10598767
+"@sapphire/result@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sapphire/result@npm:2.0.0"
+  checksum: 24ec5637e128c551332e40b0fbab06ef156a09630a7f812ac183717cadecec021d883894055b4ac3d5ede7ce0a2fff0f2b43f08fafb5d9c6f8f20b813bdd71d6
   languageName: node
   linkType: hard
 
@@ -1453,6 +1454,13 @@ __metadata:
   version: 2.0.17
   resolution: "colorette@npm:2.0.17"
   checksum: 693a56d816846e0e213f92c8061b65eb5025030b28a113f90c539fe34c860abc41132c03599af26bcbc213170a31bac1bf2d4c535ccad5ac7b5cb3248f9d98a8
+  languageName: node
+  linkType: hard
+
+"colorette@npm:^2.0.19":
+  version: 2.0.19
+  resolution: "colorette@npm:2.0.19"
+  checksum: 888cf5493f781e5fcf54ce4d49e9d7d698f96ea2b2ef67906834bb319a392c667f9ec69f4a10e268d2946d13a9503d2d19b3abaaaf174e3451bfe91fb9d82427
   languageName: node
   linkType: hard
 
@@ -4574,7 +4582,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^17.0.3
     "@commitlint/config-conventional": ^17.0.3
-    "@favware/cliff-jumper": ^1.8.3
+    "@favware/cliff-jumper": ^1.8.5
     "@favware/npm-deprecate": ^1.0.4
     "@sapphire/eslint-config": ^4.3.7
     "@sapphire/prettier-config": ^1.4.3
@@ -5480,6 +5488,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "typedoc-plugin-djs-links@workspace:packages/typedoc-djs-links"
   dependencies:
+    "@favware/cliff-jumper": ^1.8.5
     tsup: ^6.1.2
     typescript: ^4.7.4
   languageName: unknown
