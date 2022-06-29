@@ -1,6 +1,6 @@
 {
 	"name": "typedoc-plugin-djs-links",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"description": "Adds support for linking to discord.js.org for DiscordJS types to TypeDoc",
 	"author": "@sapphire",
 	"license": "MIT",
