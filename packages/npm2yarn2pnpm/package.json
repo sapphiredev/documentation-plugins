@@ -19,7 +19,8 @@
 		"typecheck": "tsc -p tsconfig.eslint.json",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
-		"check-update": "cliff-jumper --dry-run"
+		"check-update": "cliff-jumper --dry-run",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"@armano/npm-to-yarn": "^1.1.1",
