@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.2) - (2022-07-11)
+
+## 🐛 Bug Fixes
+
+- Fixed converting pnpm with flags ([35aa88c](https://github.com/sapphiredev/documentation-plugins/commit/35aa88c7d811eaa74be673dde8f09b9fd8444972))
+- Switch to @armano's fork of npm-to-yarn ([96fd557](https://github.com/sapphiredev/documentation-plugins/commit/96fd55735b155f784bb877c47cfb3ff1f8aff87c))
+- Manually set versions ([05f4d16](https://github.com/sapphiredev/documentation-plugins/commit/05f4d16dcd5673a208e4ec191e659b3cbd2dc95a))
+
+## 🧪 Testing
+
+- Add unit tests ([dfab541](https://github.com/sapphiredev/documentation-plugins/commit/dfab541b725a5296eb6768c85365f1f1ea3e0b87))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.0.3...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.0) - (2022-05-15)
 
 ## 🐛 Bug Fixes
