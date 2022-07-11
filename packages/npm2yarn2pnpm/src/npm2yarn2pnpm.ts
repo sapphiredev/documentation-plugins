@@ -1,5 +1,5 @@
+import npmToYarn from '@armano/npm-to-yarn';
 import type { Code, Content, Literal } from 'mdast';
-import npmToYarn from 'npm-to-yarn';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
 import visit from 'unist-util-visit';
