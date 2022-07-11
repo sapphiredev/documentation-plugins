@@ -15,14 +15,14 @@ const npmToPnpmTable = {
 
 		return command
 			.replace('install', 'add')
-			.replace(/\s*--save/, '--save-prod')
+			.replace(/(\s*)--save(?!-)/, '$1--save-prod')
 			.replace('--no-package-lock', '');
 	},
 
 	uninstall(command: string) {
 		return command
 			.replace('uninstall', 'remove')
-			.replace(/\s*--save/, '--save-prod')
+			.replace(/(\s*)--save(?!-)/, '$1--save-prod')
 			.replace('--no-package-lock', '');
 	},
 
