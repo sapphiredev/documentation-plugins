@@ -28,7 +28,7 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sapphiredev/documentation-plugins.git",
-		"directory": "packages/ts2esm2cjs"
+		"directory": "packages/npm2yarn2pnpm"
 	},
 	"files": [
 		"dist/**/*.js*",
