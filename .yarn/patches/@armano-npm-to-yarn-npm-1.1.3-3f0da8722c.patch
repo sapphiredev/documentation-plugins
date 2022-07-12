@@ -1,0 +1,22 @@
+diff --git a/dist/npmToYarn.js b/dist/npmToYarn.js
+index cd65a06faeeeaff9ff34c2c2edeb168d943a113c..07e21a9120de3b07aa678ccc230fbd03baee20ac 100644
+--- a/dist/npmToYarn.js
++++ b/dist/npmToYarn.js
+@@ -10,7 +10,7 @@ const npmToYarnTable = {
+         let ret = command
+             .replace('install', 'add')
+             .replace('--save-dev', '--dev')
+-            .replace(/\s*--save/, '')
++            .replace(/\s*--save(?!-)/, '')
+             .replace('--no-package-lock', '--no-lockfile')
+             .replace('--save-optional', '--optional')
+             .replace('--save-exact', '--exact');
+@@ -24,7 +24,7 @@ const npmToYarnTable = {
+         let ret = command
+             .replace('uninstall', 'remove')
+             .replace('--save-dev', '--dev')
+-            .replace(/\s*--save/, '')
++            .replace(/\s*--save(?!-)/, '')
+             .replace('--no-package-lock', '--no-lockfile');
+         if (/ -(?:-global|g)(?![^\b])/.test(ret)) {
+             ret = ret.replace(/ -(?:-global|g)(?![^\b])/, '');
