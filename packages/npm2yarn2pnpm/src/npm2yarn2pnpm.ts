@@ -1,4 +1,4 @@
-import npmToYarn from '@armano/npm-to-yarn';
+import { convertToYarn } from '@armano/npm-to-yarn';
 import type { Code, Content, Literal } from 'mdast';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
@@ -15,7 +15,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
 	const npmCode = node.value;
 
-	const yarnCode = npmToYarn(node.value, 'yarn');
+	const yarnCode = convertToYarn(node.value);
 	const pnpmCode = npmToPnpm(node.value);
 
 	const [, highlight] = (node.meta ?? '').split('|');
