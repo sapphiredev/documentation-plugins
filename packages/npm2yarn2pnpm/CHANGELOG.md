@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.3...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4) - (2022-10-08)
+
+## 🏠 Refactor
+
+- Switch from `@armano/npm-to-yarn` to own implementation ([c4a2543](https://github.com/sapphiredev/documentation-plugins/commit/c4a254318b6ad0609c1be9c556f2dcdd7c853b3b))
+
+## 📝 Documentation
+
+- Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.3](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.2...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.3) - (2022-07-12)
 
 ## 🐛 Bug Fixes
