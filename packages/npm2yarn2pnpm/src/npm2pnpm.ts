@@ -7,16 +7,24 @@
 
 const unchangedCLICommands = ['init', 'run', 'test', 'login', 'logout', 'link', 'publish', 'cache'];
 
+function parseNpmInstall(command: string, isShortHand = false) {
+	if (/^install *$/.test(command)) {
+		return 'install';
+	}
+
+	return command
+		.replace(isShortHand ? 'i ' : 'install ', 'add ')
+		.replace(/(\s*)--save(?!-)/, '$1--save-prod')
+		.replace('--no-package-lock', '');
+}
+
 const npmToPnpmTable = {
 	install(command: string) {
-		if (/^install *$/.test(command)) {
-			return 'install';
-		}
+		return parseNpmInstall(command);
+	},
 
-		return command
-			.replace('install', 'add')
-			.replace(/(\s*)--save(?!-)/, '$1--save-prod')
-			.replace('--no-package-lock', '');
+	i(command: string) {
+		return parseNpmInstall(command, true);
 	},
 
 	uninstall(command: string) {

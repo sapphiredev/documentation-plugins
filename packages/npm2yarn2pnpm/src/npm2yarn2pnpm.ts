@@ -1,9 +1,9 @@
-import { convertToYarn } from '@armano/npm-to-yarn';
 import type { Code, Content, Literal } from 'mdast';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
 import visit from 'unist-util-visit';
 import { npmToPnpm } from './npm2pnpm';
+import { npmToYarn } from './npm2yarn';
 
 /**
  * Transforms a Docusaurus node from NPM to Yarn and Pnpm
@@ -15,7 +15,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
 	const npmCode = node.value;
 
-	const yarnCode = convertToYarn(node.value);
+	const yarnCode = npmToYarn(node.value);
 	const pnpmCode = npmToPnpm(node.value);
 
 	const [, highlight] = (node.meta ?? '').split('|');
