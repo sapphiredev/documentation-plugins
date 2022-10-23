@@ -1,68 +1,12 @@
-import sapphirePrettierConfig from '@sapphire/prettier-config';
-import { runTransform } from 'esm-to-cjs';
 import type { Code, Content, Literal } from 'mdast';
-import prettier, { Options } from 'prettier';
-import ts, { CompilerOptions } from 'typescript';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
 import visit from 'unist-util-visit';
+import { esm2cjs, ts2esm } from './ts2esm2cjs';
+import type { PluginOptions } from './types';
 
-const documentationPrettierConfig: Options = {
-	...sapphirePrettierConfig,
-	tabWidth: 2,
-	useTabs: false,
-	printWidth: 120,
-	parser: 'babel'
-};
-
-const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptions => ({
-	newLine: ts.NewLineKind.LineFeed,
-	removeComments: false,
-	esModuleInterop: true,
-	pretty: true,
-	...overrideOptions,
-	module: ts.ModuleKind.ESNext,
-	moduleResolution: ts.ModuleResolutionKind.NodeJs,
-	target: ts.ScriptTarget.ESNext
-});
-
-/**
- * Transpiles input TypeScript code to ESM code.
- * @param code The code to transpile
- * @returns Input code transpiled to ESM
- */
-const tsToEsm = (code: string, options: Pick<PluginOptions, 'typescriptCompilerOptions'>): ts.TranspileOutput =>
-	ts.transpileModule(code, { reportDiagnostics: false, compilerOptions: makeTsCompilerOptions(options.typescriptCompilerOptions) });
-
-/**
- * Transforms input ESM code to CJS code.
- * @param code The code to transform
- * @returns Input code transformed to CommonJS
- */
-const esmToCjs = (code: string): string => runTransform(code, { quote: 'single', lenDestructure: 128, lenModuleName: 128, lenIdentifier: 128 });
-
-/**
- * Escaped new lines in code with block comments so they can be restored by {@link restoreNewLines}
- * @param code The code to escape new lines in
- * @returns The same code but with new lines escaped using block comments
- */
-const escapeNewLines = (code: string) => code.replace(/\n\n/g, '\n/* :newline: */');
-
-/**
- * Reverses {@link escapeNewLines} and restores new lines
- * @param code The code with escaped new lines
- * @returns The same code with new lines restored
- */
-const restoreNewLines = (code: string): string => code.replace(/\/\* :newline: \*\//g, '\n');
-
-/**
- * Formats the code using Prettier
- * @param code The code to prettier format
- * @param prettierConfig Additional prettier options to use for formatting
- * @returns Prettier formatted code
- */
-const prettierFormatCode = (code: string, prettierConfig?: Options) =>
-	prettier.format(code, { ...documentationPrettierConfig, ...prettierConfig }).slice(0, -1);
+export { esm2cjs, ts2esm } from './ts2esm2cjs';
+export { PluginOptions } from './types';
 
 /**
  * Transforms a Docusaurus node from TypeScript to ESM and CJS
@@ -73,11 +17,14 @@ const prettierFormatCode = (code: string, prettierConfig?: Options) =>
 const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="ts2esm2cjs"' : '';
 
-	const tsCode = escapeNewLines(node.value);
-	const esmCode = tsToEsm(tsCode, { typescriptCompilerOptions: options.typescriptCompilerOptions }).outputText;
-	const cjsCode = esmToCjs(esmCode);
+	const esmCode = ts2esm(node.value, options);
+	const cjsCode = esm2cjs(esmCode, options);
 
-	const [, jsHighlight, tsHighlight] = (node.meta ?? '').split('|');
+	let [, jsHighlight, tsHighlight] = (node.meta ?? '').split('|');
+
+	if (!tsHighlight && jsHighlight) {
+		tsHighlight = jsHighlight;
+	}
 
 	return [
 		{
@@ -95,7 +42,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 			type: node.type,
 			lang: node.lang,
 			meta: `${jsHighlight} showLineNumbers`,
-			value: prettierFormatCode(restoreNewLines(cjsCode), options.prettierOptions)
+			value: cjsCode
 		},
 		{
 			type: 'jsx',
@@ -105,7 +52,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 			type: node.type,
 			lang: node.lang,
 			meta: `${jsHighlight} showLineNumbers`,
-			value: prettierFormatCode(restoreNewLines(esmCode), options.prettierOptions)
+			value: esmCode
 		},
 		{
 			type: 'jsx',
@@ -132,12 +79,6 @@ const nodeForImport: Literal = {
 	type: 'import',
 	value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
 };
-
-export interface PluginOptions {
-	sync?: boolean;
-	prettierOptions?: Options;
-	typescriptCompilerOptions?: CompilerOptions;
-}
 
 export const ts2esm2cjs: Plugin<[PluginOptions?]> = (
 	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} } = { sync: true, prettierOptions: {}, typescriptCompilerOptions: {} }
