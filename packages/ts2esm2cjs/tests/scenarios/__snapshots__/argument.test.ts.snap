@@ -1,0 +1,44 @@
+// Vitest Snapshot v1
+
+exports[`argument > GIVEN argument fixture THEN outputs valid ESM and CJS code 1`] = `
+"// TypeScript:
+import { Argument } from '@sapphire/framework';
+import { URL } from 'node:url';
+
+export class CoreArgument extends Argument {
+  constructor(context) {
+    super(context, { name: 'hyperlink', aliases: ['url'] });
+  }
+
+  run(argument) {
+    try {
+      return this.ok(new URL(argument));
+    } catch {
+      return this.error(argument, 'ArgumentHyperlinkInvalidURL', 'The argument did not resolve to a valid URL.');
+    }
+  }
+}"
+`;
+
+exports[`argument > GIVEN argument fixture THEN outputs valid ESM and CJS code 2`] = `
+"// TypeScript:
+const { Argument } = require('@sapphire/framework');
+const { URL } = require('node:url');
+
+class CoreArgument extends Argument {
+  constructor(context) {
+    super(context, { name: 'hyperlink', aliases: ['url'] });
+  }
+
+  run(argument) {
+    try {
+      return this.ok(new URL(argument));
+    } catch {
+      return this.error(argument, 'ArgumentHyperlinkInvalidURL', 'The argument did not resolve to a valid URL.');
+    }
+  }
+}
+module.exports = {
+  CoreArgument
+};"
+`;

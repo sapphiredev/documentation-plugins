@@ -19,7 +19,8 @@
 		"typecheck": "tsc -p tsconfig.eslint.json",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
-		"check-update": "cliff-jumper --dry-run"
+		"check-update": "cliff-jumper --dry-run",
+		"test": "vitest run"
 	},
 	"dependencies": {
 		"@sapphire/prettier-config": "^1.4.4",
@@ -64,6 +65,7 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^1.8.8",
 		"tsup": "^6.3.0",
-		"typescript": "^4.8.4"
+		"typescript": "^4.8.4",
+		"vitest": "^0.24.3"
 	}
 }
