@@ -1,3 +1,6 @@
+// eslint-disable-next-line spaced-comment
+/// <reference lib="dom" />
+
 import type { Application } from 'typedoc';
 import { resolveClasses } from './resolveClasses';
 import { resolveTypeDefs } from './resolveTypedefs';
