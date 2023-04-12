@@ -1,7 +1,7 @@
 import sapphirePrettierConfig from '@sapphire/prettier-config';
 import { runTransform } from 'esm-to-cjs';
-import prettier, { Options } from 'prettier';
-import ts, { CompilerOptions } from 'typescript';
+import prettier, { type Options } from 'prettier';
+import ts, { type CompilerOptions } from 'typescript';
 import type { PluginOptions } from './types';
 
 const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptions => ({

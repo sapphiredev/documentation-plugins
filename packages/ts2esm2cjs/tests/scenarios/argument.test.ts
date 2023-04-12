@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
-import { esm2cjs, ts2esm } from '../../src/ts2esm2cjs';
 import { resolve } from 'node:path';
+import { esm2cjs, ts2esm } from '../../src/ts2esm2cjs';
 
 describe('argument', async () => {
 	const inputCode = await readFile(resolve(__dirname, '../fixtures/argument.ts'), { encoding: 'utf-8' });

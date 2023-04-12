@@ -1,5 +1,5 @@
 // TypeScript:
-import { Argument, PieceContext } from '@sapphire/framework';
+import { Argument, type PieceContext } from '@sapphire/framework';
 import { URL } from 'node:url';
 
 export class CoreArgument extends Argument<URL> {
@@ -7,11 +7,16 @@ export class CoreArgument extends Argument<URL> {
 		super(context, { name: 'hyperlink', aliases: ['url'] });
 	}
 
-	public run(argument: string): Argument.Result<URL> {
+	public run(parameter: string, context: Argument.Context): Argument.Result<URL> {
 		try {
-			return this.ok(new URL(argument));
+			return this.ok(new URL(parameter));
 		} catch {
-			return this.error(argument, 'ArgumentHyperlinkInvalidURL', 'The argument did not resolve to a valid URL.');
+			return this.error({
+				parameter,
+				identifier: 'ArgumentHyperlinkInvalidURL',
+				context,
+				message: 'The argument did not resolve to a valid URL.'
+			});
 		}
 	}
 }

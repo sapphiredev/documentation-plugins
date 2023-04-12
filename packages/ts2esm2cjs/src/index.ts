@@ -6,7 +6,7 @@ import { esm2cjs, ts2esm } from './ts2esm2cjs';
 import type { PluginOptions } from './types';
 
 export { esm2cjs, ts2esm } from './ts2esm2cjs';
-export { PluginOptions } from './types';
+export type { PluginOptions } from './types';
 
 /**
  * Transforms a Docusaurus node from TypeScript to ESM and CJS
