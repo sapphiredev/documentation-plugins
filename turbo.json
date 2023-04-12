@@ -10,7 +10,7 @@
 		},
 		"test": {
 			"dependsOn": [],
-			"outputs": ["coverage/**"]
+			"outputs": []
 		},
 		"bump": {
 			"dependsOn": [],
