@@ -40,7 +40,7 @@
 		"rimraf": "^5.0.0",
 		"tsup": "^6.7.0",
 		"turbo": "^1.9.1",
-		"typedoc": "0.24.1",
+		"typedoc": "0.24.2",
 		"typescript": "^5.0.4",
 		"unified": "^10.1.2",
 		"vite": "^4.2.1",
