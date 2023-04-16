@@ -64,6 +64,6 @@
 		"discord.js": "^14.9.0",
 		"tsup": "^6.7.0",
 		"typescript": "^5.0.4",
-		"vitest": "^0.29.8"
+		"vitest": "^0.30.1"
 	}
 }
