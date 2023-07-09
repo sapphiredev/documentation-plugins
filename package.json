@@ -23,7 +23,7 @@
 		"@sapphire/eslint-config": "^4.4.2",
 		"@sapphire/prettier-config": "^1.4.5",
 		"@sapphire/ts-config": "^4.0.0",
-		"@types/mdast": "^3.0.11",
+		"@types/mdast": "^4.0.0",
 		"@types/node": "^18.16.19",
 		"@types/prettier": "^2.7.3",
 		"@types/unist": "^3.0.0",
