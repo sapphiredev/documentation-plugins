@@ -25,7 +25,7 @@
 	"dependencies": {
 		"@sapphire/prettier-config": "^1.4.5",
 		"esm-to-cjs": "^1.2.1",
-		"prettier": "^2.8.8",
+		"prettier": "^3.0.0",
 		"typescript": "^5.1.6",
 		"unist-util-visit": "^2.0.3"
 	},
