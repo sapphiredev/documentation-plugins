@@ -26,7 +26,7 @@
 		"@types/mdast": "^3.0.11",
 		"@types/node": "^18.16.19",
 		"@types/prettier": "^2.7.3",
-		"@types/unist": "^2.0.6",
+		"@types/unist": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.60.1",
 		"@typescript-eslint/parser": "^5.60.1",
 		"cz-conventional-changelog": "^3.3.0",
