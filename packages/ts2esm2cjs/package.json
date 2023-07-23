@@ -23,7 +23,7 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@sapphire/prettier-config": "^1.4.5",
+		"@sapphire/prettier-config": "^2.0.0",
 		"esm-to-cjs": "^1.2.1",
 		"prettier": "^2.8.8",
 		"typescript": "^5.1.6",
