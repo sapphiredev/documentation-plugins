@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.3...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4) - (2023-08-07)
+
+## 🏠 Refactor
+
+- **ts2esm2cjs:** Split off and export transform `ts2esm` and `esm2cjs` functions ([dcd3630](https://github.com/sapphiredev/documentation-plugins/commit/dcd3630b8fe565f4df1edb4d417104cebd376eab))
+
+## 🐛 Bug Fixes
+
+- **ts2esm2cjs:** Switch to @prettier/sync ([72b8bf7](https://github.com/sapphiredev/documentation-plugins/commit/72b8bf7872841984b5901e04ce906352c215d769))
+- **deps:** Update dependency @sapphire/prettier-config to ^1.4.5 ([ca06c4b](https://github.com/sapphiredev/documentation-plugins/commit/ca06c4b3111898fc19c154e0177b607368ce0151))
+
+## 📝 Documentation
+
+- Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
+
+## 🧪 Testing
+
+- **ts2esm:** Add unit tests ([a2ea21a](https://github.com/sapphiredev/documentation-plugins/commit/a2ea21ac2d94801a054aaa9f17e31b02e80bee02))
+
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.0...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.2) - (2022-07-11)
 
 ## 🐛 Bug Fixes
