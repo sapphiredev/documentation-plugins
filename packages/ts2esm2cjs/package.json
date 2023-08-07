@@ -23,9 +23,9 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
+		"@prettier/sync": "^0.3.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"esm-to-cjs": "^1.2.1",
-		"prettier": "^3.0.0",
 		"typescript": "^5.1.6",
 		"unist-util-visit": "^2.0.3"
 	},
