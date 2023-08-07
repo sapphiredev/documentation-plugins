@@ -21,7 +21,7 @@
 		"@commitlint/config-conventional": "^17.6.7",
 		"@favware/cliff-jumper": "^2.1.1",
 		"@favware/npm-deprecate": "^1.0.7",
-		"@sapphire/eslint-config": "^5.0.0",
+		"@sapphire/eslint-config": "^5.0.1",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^4.0.1",
 		"@types/mdast": "^4.0.0",
