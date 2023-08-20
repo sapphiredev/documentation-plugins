@@ -773,7 +773,6 @@ __metadata:
     "@favware/cliff-jumper": ^2.1.1
     "@prettier/sync": ^0.3.0
     "@sapphire/framework": ^4.5.1
-    "@sapphire/prettier-config": ^2.0.0
     esm-to-cjs: ^1.2.1
     tsup: ^7.2.0
     typescript: ^5.1.6

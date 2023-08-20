@@ -1,5 +1,4 @@
 import { format } from '@prettier/sync';
-import sapphirePrettierConfig from '@sapphire/prettier-config';
 import { runTransform } from 'esm-to-cjs';
 import type { Options } from 'prettier';
 import ts, { type CompilerOptions } from 'typescript';
@@ -17,7 +16,11 @@ const makeTsCompilerOptions = (overrideOptions?: CompilerOptions): CompilerOptio
 });
 
 const documentationPrettierConfig: Options = {
-	...sapphirePrettierConfig,
+	endOfLine: 'lf',
+	quoteProps: 'as-needed',
+	semi: true,
+	singleQuote: true,
+	trailingComma: 'none',
 	tabWidth: 2,
 	useTabs: false,
 	printWidth: 120,

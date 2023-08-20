@@ -8,9 +8,9 @@
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"exports": {
+		"types": "./dist/index.d.ts",
 		"import": "./dist/index.mjs",
-		"require": "./dist/index.js",
-		"types": "./dist/index.d.ts"
+		"require": "./dist/index.js"
 	},
 	"sideEffects": false,
 	"scripts": {
@@ -24,7 +24,6 @@
 	},
 	"dependencies": {
 		"@prettier/sync": "^0.3.0",
-		"@sapphire/prettier-config": "^2.0.0",
 		"esm-to-cjs": "^1.2.1",
 		"typescript": "^5.1.6",
 		"unist-util-visit": "^2.0.3"
@@ -35,9 +34,8 @@
 		"directory": "packages/ts2esm2cjs"
 	},
 	"files": [
-		"dist/**/*.js*",
-		"dist/**/*.mjs*",
-		"dist/**/*.d*"
+		"dist/",
+		"!dist/.tsbuildinfo"
 	],
 	"engines": {
 		"node": ">=v16.6.0",
