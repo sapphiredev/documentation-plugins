@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5) - (2023-08-20)
+
+## 🐛 Bug Fixes
+
+- **ts2esm2cjs:** Remove dependency on @sapphire/prettier-config ([ef09164](https://github.com/sapphiredev/documentation-plugins/commit/ef09164877ee21fe8c7657b9027c74131092154e))
+
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.3...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4) - (2023-08-07)
 
 ## 🏠 Refactor
