@@ -5,16 +5,15 @@ import { load } from '../dist';
 
 let project: ProjectReflection | undefined;
 
-beforeAll(() => {
-	const app = new Application();
-	app.options.addReader(new TSConfigReader());
-	app.bootstrap({
+beforeAll(async () => {
+	const app = await Application.bootstrap({
 		entryPoints: [join(__dirname, 'fixtures', 'links.ts')],
 		tsconfig: join(__dirname, 'tsconfig.json')
 	});
+	app.options.addReader(new TSConfigReader());
 	load(app);
 
-	project ??= app.convert();
+	project ??= await app.convert();
 	expect(project).toBeDefined();
 });
 
