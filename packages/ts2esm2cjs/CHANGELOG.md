@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6) - (2023-08-29)
+
+## 🐛 Bug Fixes
+
+- **ts2esm2cjs:** Update export mapping ([69ab926](https://github.com/sapphiredev/documentation-plugins/commit/69ab926773b235aeaad5182c841e9cf92fcb5580))
+
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5) - (2023-08-20)
 
 ## 🐛 Bug Fixes
