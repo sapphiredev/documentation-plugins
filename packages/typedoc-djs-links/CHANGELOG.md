@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [typedoc-plugin-djs-links@2.1.1](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.1.0...typedoc-plugin-djs-links@2.1.1) - (2023-08-29)
+
+## 🐛 Bug Fixes
+
+- **typedoc-djs-links:** Update export mapping ([f4d930b](https://github.com/sapphiredev/documentation-plugins/commit/f4d930b6431eba3e9dc44bbb134ab826a3f76c5c))
+
 # [typedoc-plugin-djs-links@2.1.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.0.0...typedoc-plugin-djs-links@2.1.0) - (2023-08-29)
 
 ## 🚀 Features
