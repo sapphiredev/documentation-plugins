@@ -1,6 +1,6 @@
 {
 	"name": "@sapphire/docusaurus-plugin-npm2yarn2pnpm",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"description": "Docusaurus Remark plugin for converting NPM Commands to Yarn and Pnpm",
 	"author": "@sapphire",
 	"license": "MIT",

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.5](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.5) - (2023-08-29)
+
+## 🐛 Bug Fixes
+
+- **npm2yarn2pnpm:** Update export mapping ([6571853](https://github.com/sapphiredev/documentation-plugins/commit/6571853fec32d28d15cc96f6ebe81fc0633d7c42))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.3...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4) - (2022-10-08)
 
 ## 🏠 Refactor
