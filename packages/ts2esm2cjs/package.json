@@ -25,7 +25,7 @@
 	"dependencies": {
 		"@prettier/sync": "^0.3.0",
 		"esm-to-cjs": "^1.2.1",
-		"typescript": "^5.1.6",
+		"typescript": "^5.2.2",
 		"unist-util-visit": "^2.0.3"
 	},
 	"repository": {
@@ -62,8 +62,8 @@
 	},
 	"devDependencies": {
 		"@favware/cliff-jumper": "^2.1.1",
-		"@sapphire/framework": "^4.5.1",
+		"@sapphire/framework": "^4.5.3",
 		"tsup": "^7.2.0",
-		"vitest": "^0.34.2"
+		"vitest": "^0.34.3"
 	}
 }
