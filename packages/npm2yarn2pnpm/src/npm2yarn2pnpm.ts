@@ -7,10 +7,22 @@ import { npmToYarn } from './npm2yarn';
 import { npmToBun } from './npm2bun';
 
 /**
- * Transforms a Docusaurus node from NPM to Yarn and Pnpm
- * @param node The Docusaurus node to transform
- * @param options The plugin options to pass to the transformer
- * @returns The transformed node in the form of Tabs.
+ * A Docusaurus plugin that transforms code blocks from NPM to Yarn, Pnpm, and optionally to Bun.
+ *
+ * @param options - The plugin options to customize the transformation behavior.
+ *   - `sync` (optional): A boolean indicating whether to synchronize code examples (default: `true`).
+ *   - `convertToBun` (optional): A boolean indicating whether to include a Bun option (default: `false`).
+ *     Set this option to `true` to enable Bun code transformation.
+ *
+ * @returns A unified plugin function that can be used to transform Docusaurus content.
+ *
+ * @remarks
+ * This plugin searches for code blocks within the provided Markdown content and
+ * converts them into Tabs, allowing users to switch between NPM, Yarn, and Pnpm examples.
+ * Additionally, it can include a Bun option when the `convertToBun` option is set to `true`.
+ * If the Tabs component is not already imported, it adds the necessary import statement.
+ *
+ * @public
  */
 const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
