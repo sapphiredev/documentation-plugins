@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0) - (2023-09-16)
+
+## 🚀 Features
+
+- Support for the bun package manger (#187) ([7db8af9](https://github.com/sapphiredev/documentation-plugins/commit/7db8af9ab27fb79fbf1d70fdc9f7f8dcae2f529a))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.5](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.4...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.1.5) - (2023-08-29)
 
 ## 🐛 Bug Fixes
