@@ -1,10 +1,10 @@
-import type { Code, Content, Literal } from 'mdast';
+import type { Code, Literal, RootContent } from 'mdast';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
 import visit from 'unist-util-visit';
+import { npmToBun } from './npm2bun';
 import { npmToPnpm } from './npm2pnpm';
 import { npmToYarn } from './npm2yarn';
-import { npmToBun } from './npm2bun';
 
 /**
  * A Docusaurus plugin that transforms code blocks from NPM to Yarn, Pnpm, and optionally to Bun.
@@ -16,13 +16,10 @@ import { npmToBun } from './npm2bun';
  *
  * @returns A unified plugin function that can be used to transform Docusaurus content.
  *
- * @remarks
- * This plugin searches for code blocks within the provided Markdown content and
+ * @remarks This plugin searches for code blocks within the provided Markdown content and
  * converts them into Tabs, allowing users to switch between NPM, Yarn, and Pnpm examples.
  * Additionally, it can include a Bun option when the `convertToBun` option is set to `true`.
  * If the Tabs component is not already imported, it adds the necessary import statement.
- *
- * @public
  */
 const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
@@ -73,21 +70,30 @@ const transformNode = (node: Code, options: PluginOptions) => {
 			meta: `${highlight} showLineNumbers`,
 			value: pnpmCode
 		},
-		{
-			type: 'jsx',
-			value: '</TabItem>\n</Tabs>'
-		},
-		options.convertToBun && {
-			type: node.type,
-			lang: node.lang,
-			meta: `${highlight} showLineNumbers`,
-			value: bunCode
-		},
-		options.convertToBun && {
-			type: 'jsx',
-			value: '</TabItem>\n</Tabs>'
-		}
-	] as Content[];
+		...(options.convertToBun
+			? [
+					{
+						type: 'jsx',
+						value: '</TabItem>\n<TabItem value="bun">'
+					},
+					{
+						type: node.type,
+						lang: node.lang,
+						meta: `${highlight} showLineNumbers`,
+						value: bunCode
+					},
+					{
+						type: 'jsx',
+						value: '</TabItem>\n</Tabs>'
+					}
+			  ]
+			: [
+					{
+						type: 'jsx',
+						value: '</TabItem>\n</Tabs>'
+					}
+			  ])
+	] as RootContent[];
 };
 
 const isImport = (node: Node): node is Literal => node.type === 'import';
@@ -104,7 +110,7 @@ export interface PluginOptions {
 	convertToBun?: boolean;
 }
 
-export const npm2yarn2pnpm: Plugin<[PluginOptions?]> =
+export const convertNpmToPackageManagers: Plugin<[PluginOptions?]> =
 	({ sync = true, convertToBun = false } = { sync: true, convertToBun: false }) =>
 	(root) => {
 		let transformed = false;
@@ -132,3 +138,9 @@ export const npm2yarn2pnpm: Plugin<[PluginOptions?]> =
 			(root as Parent).children.unshift(nodeForImport);
 		}
 	};
+
+/**
+ * @deprecated This function has been renamed to {@link convertNpmToPackageManagers}. Please update your code.
+ * The old name will be removed in the next major release.
+ */
+export const npm2yarn2pnpm = convertNpmToPackageManagers;
