@@ -1,15 +1,25 @@
-import type { Code, Content, Literal } from 'mdast';
+import type { Code, Literal, RootContent } from 'mdast';
 import type { Plugin } from 'unified';
 import type { Node, Parent } from 'unist';
 import visit from 'unist-util-visit';
+import { npmToBun } from './npm2bun';
 import { npmToPnpm } from './npm2pnpm';
 import { npmToYarn } from './npm2yarn';
 
 /**
- * Transforms a Docusaurus node from NPM to Yarn and Pnpm
- * @param node The Docusaurus node to transform
- * @param options The plugin options to pass to the transformer
- * @returns The transformed node in the form of Tabs.
+ * A Docusaurus plugin that transforms code blocks from NPM to Yarn, Pnpm, and optionally to Bun.
+ *
+ * @param options - The plugin options to customize the transformation behavior.
+ *   - `sync` (optional): A boolean indicating whether to synchronize code examples (default: `true`).
+ *   - `convertToBun` (optional): A boolean indicating whether to include a Bun option (default: `false`).
+ *     Set this option to `true` to enable Bun code transformation.
+ *
+ * @returns A unified plugin function that can be used to transform Docusaurus content.
+ *
+ * @remarks This plugin searches for code blocks within the provided Markdown content and
+ * converts them into Tabs, allowing users to switch between NPM, Yarn, and Pnpm examples.
+ * Additionally, it can include a Bun option when the `convertToBun` option is set to `true`.
+ * If the Tabs component is not already imported, it adds the necessary import statement.
  */
 const transformNode = (node: Code, options: PluginOptions) => {
 	const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
@@ -17,6 +27,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 
 	const yarnCode = npmToYarn(node.value);
 	const pnpmCode = npmToPnpm(node.value);
+	const bunCode = options.convertToBun ? npmToBun(node.value) : '';
 
 	const [, highlight] = (node.meta ?? '').split('|');
 
@@ -29,6 +40,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 							{ label: "npm", value: "npm" },
 							{ label: "yarn", value: "yarn" },
 							{ label: "pnpm", value: "pnpm" },
+							${options.convertToBun && '{ label: "bun", value: "bun" }'}
 						]}
 			>\n<TabItem value="npm">`
 		},
@@ -58,11 +70,30 @@ const transformNode = (node: Code, options: PluginOptions) => {
 			meta: `${highlight} showLineNumbers`,
 			value: pnpmCode
 		},
-		{
-			type: 'jsx',
-			value: '</TabItem>\n</Tabs>'
-		}
-	] as Content[];
+		...(options.convertToBun
+			? [
+					{
+						type: 'jsx',
+						value: '</TabItem>\n<TabItem value="bun">'
+					},
+					{
+						type: node.type,
+						lang: node.lang,
+						meta: `${highlight} showLineNumbers`,
+						value: bunCode
+					},
+					{
+						type: 'jsx',
+						value: '</TabItem>\n</Tabs>'
+					}
+			  ]
+			: [
+					{
+						type: 'jsx',
+						value: '</TabItem>\n</Tabs>'
+					}
+			  ])
+	] as RootContent[];
 };
 
 const isImport = (node: Node): node is Literal => node.type === 'import';
@@ -76,10 +107,11 @@ const nodeForImport: Literal = {
 
 export interface PluginOptions {
 	sync?: boolean;
+	convertToBun?: boolean;
 }
 
-export const npm2yarn2pnpm: Plugin<[PluginOptions?]> =
-	({ sync = true } = { sync: true }) =>
+export const convertNpmToPackageManagers: Plugin<[PluginOptions?]> =
+	({ sync = true, convertToBun = false } = { sync: true, convertToBun: false }) =>
 	(root) => {
 		let transformed = false;
 		let alreadyImported = false;
@@ -92,7 +124,7 @@ export const npm2yarn2pnpm: Plugin<[PluginOptions?]> =
 				while (index < node.children.length) {
 					const child = node.children[index]!;
 					if (matchNode(child)) {
-						const result = transformNode(child, { sync });
+						const result = transformNode(child, { sync, convertToBun });
 						node.children.splice(index, 1, ...result);
 						index += result.length;
 						transformed = true;
@@ -106,3 +138,9 @@ export const npm2yarn2pnpm: Plugin<[PluginOptions?]> =
 			(root as Parent).children.unshift(nodeForImport);
 		}
 	};
+
+/**
+ * @deprecated This function has been renamed to {@link convertNpmToPackageManagers}. Please update your code.
+ * The old name will be removed in the next major release.
+ */
+export const npm2yarn2pnpm = convertNpmToPackageManagers;

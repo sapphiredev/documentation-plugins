@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2019 Ben Gubler <nebrelbug@gmail.com>
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 const unchangedCLICommands = ['init', 'run', 'test', 'login', 'logout', 'link', 'publish', 'cache'];
 
 function parseNpmInstall(command: string, isShortHand = false) {
@@ -18,7 +11,7 @@ function parseNpmInstall(command: string, isShortHand = false) {
 		.replace('--no-package-lock', '');
 }
 
-const npmToPnpmTable = {
+const npmToBunTable = {
 	install(command: string) {
 		return parseNpmInstall(command);
 	},
@@ -48,22 +41,22 @@ function convert(_: string, command: string) {
 	const firstCommand = (/\w+/.exec(command) || [''])[0];
 
 	if (unchangedCLICommands.includes(firstCommand)) {
-		return `pnpm ${command}`;
+		return `bun ${command}`;
 	}
 
-	if (firstCommand in npmToPnpmTable) {
-		const converter = npmToPnpmTable[firstCommand as keyof typeof npmToPnpmTable];
+	if (firstCommand in npmToBunTable) {
+		const converter = npmToBunTable[firstCommand as keyof typeof npmToBunTable];
 
 		if (typeof converter === 'function') {
-			return `pnpm ${converter(command)}`;
+			return `bun ${converter(command)}`;
 		}
 
-		return `pnpm ${command.replace(firstCommand, converter)}`;
+		return `bun ${command.replace(firstCommand, converter)}`;
 	}
 
-	return `pnpm ${command}\n# couldn't auto-convert command`;
+	return `bun ${command}\n# couldn't auto-convert command`;
 }
 
-export function npmToPnpm(str: string) {
+export function npmToBun(str: string) {
 	return str.replace(/npm(?: +([^&\n\r]*))?/gm, convert);
 }
