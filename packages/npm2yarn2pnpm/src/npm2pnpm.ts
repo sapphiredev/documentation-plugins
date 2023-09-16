@@ -45,16 +45,20 @@ const npmToPnpmTable = {
 
 function convert(_: string, command: string) {
 	command = (command ?? '').trim();
-
-	const firstCommand = (/\w+/.exec(command) || [''])[0] as keyof typeof npmToPnpmTable;
+	const firstCommand = (/\w+/.exec(command) || [''])[0];
 
 	if (unchangedCLICommands.includes(firstCommand)) {
 		return `pnpm ${command}`;
-	} else if (Object.prototype.hasOwnProperty.call(npmToPnpmTable, firstCommand) && npmToPnpmTable[firstCommand]) {
-		if (typeof npmToPnpmTable[firstCommand] === 'function') {
-			return `pnpm ${npmToPnpmTable[firstCommand](command)}`;
+	}
+
+	if (firstCommand in npmToPnpmTable) {
+		const converter = npmToPnpmTable[firstCommand as keyof typeof npmToPnpmTable];
+
+		if (typeof converter === 'function') {
+			return `pnpm ${converter(command)}`;
 		}
-		return `pnpm ${command.replace(firstCommand, npmToPnpmTable[firstCommand])}`;
+
+		return `pnpm ${command.replace(firstCommand, converter)}`;
 	}
 
 	return `pnpm ${command}\n# couldn't auto-convert command`;

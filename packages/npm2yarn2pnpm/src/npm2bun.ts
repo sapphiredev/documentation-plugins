@@ -38,19 +38,23 @@ const npmToBunTable = {
 
 function convert(_: string, command: string) {
 	command = (command ?? '').trim();
-
-	const firstCommand = (/\w+/.exec(command) || [''])[0] as keyof typeof npmToBunTable;
+	const firstCommand = (/\w+/.exec(command) || [''])[0];
 
 	if (unchangedCLICommands.includes(firstCommand)) {
-		return `Bun ${command}`;
-	} else if (Object.prototype.hasOwnProperty.call(npmToBunTable, firstCommand) && npmToBunTable[firstCommand]) {
-		if (typeof npmToBunTable[firstCommand] === 'function') {
-			return `Bun ${npmToBunTable[firstCommand](command)}`;
-		}
-		return `Bun ${command.replace(firstCommand, npmToBunTable[firstCommand])}`;
+		return `bun ${command}`;
 	}
 
-	return `Bun ${command}\n# couldn't auto-convert command`;
+	if (firstCommand in npmToBunTable) {
+		const converter = npmToBunTable[firstCommand as keyof typeof npmToBunTable];
+
+		if (typeof converter === 'function') {
+			return `bun ${converter(command)}`;
+		}
+
+		return `bun ${command.replace(firstCommand, converter)}`;
+	}
+
+	return `bun ${command}\n# couldn't auto-convert command`;
 }
 
 export function npmToBun(str: string) {
