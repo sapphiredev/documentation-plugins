@@ -69,6 +69,6 @@
 		"@favware/cliff-jumper": "^2.2.0",
 		"@sapphire/framework": "^4.6.0",
 		"tsup": "^7.2.0",
-		"vitest": "^0.34.5"
+		"vitest": "^0.34.6"
 	}
 }
