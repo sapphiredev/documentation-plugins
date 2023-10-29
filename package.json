@@ -16,18 +16,18 @@
 		"check-update": "turbo run check-update"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^18.0.0",
-		"@commitlint/config-conventional": "^18.0.0",
+		"@commitlint/cli": "^18.2.0",
+		"@commitlint/config-conventional": "^18.1.0",
 		"@favware/cliff-jumper": "^2.2.0",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@sapphire/eslint-config": "^5.0.2",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.0",
 		"@types/mdast": "^4.0.2",
-		"@types/node": "^20.8.7",
+		"@types/node": "^20.8.9",
 		"@types/unist": "^3.0.1",
-		"@typescript-eslint/eslint-plugin": "^6.8.0",
-		"@typescript-eslint/parser": "^6.8.0",
+		"@typescript-eslint/eslint-plugin": "^6.9.0",
+		"@typescript-eslint/parser": "^6.9.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.52.0",
 		"eslint-config-prettier": "^9.0.0",
@@ -44,7 +44,7 @@
 		"vitest": "^0.34.6"
 	},
 	"resolutions": {
-		"acorn": "^8.10.0",
+		"acorn": "^8.11.2",
 		"ansi-regex": "^5.0.1",
 		"minimist": "^1.2.8"
 	},
