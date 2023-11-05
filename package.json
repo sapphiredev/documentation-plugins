@@ -52,8 +52,7 @@
 		"url": "git+https://github.com/sapphiredev/documentation-plugins.git"
 	},
 	"engines": {
-		"node": ">=v16.0.0",
-		"npm": ">=7.0.0"
+		"node": ">=18.0"
 	},
 	"commitlint": {
 		"extends": [
