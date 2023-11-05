@@ -92,11 +92,15 @@ const transformNode = (node: Code, options: PluginOptions) => {
 					node,
 					value: 'pnpm'
 				}),
-				createTabItem({
-					code: bunCode,
-					node,
-					value: 'bun'
-				})
+				...(options.convertToBun
+					? [
+							createTabItem({
+								code: bunCode,
+								node,
+								value: 'bun'
+							})
+					  ]
+					: [])
 			]
 		}
 	] as RootContent[];
