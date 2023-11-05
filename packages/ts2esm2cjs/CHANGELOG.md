@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0...@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0) - (2023-11-05)
+
+## 🐛 Bug Fixes
+
+- **ts2esm2cjs:** Add support for Docusaurus V3 ([4d1d170](https://github.com/sapphiredev/documentation-plugins/commit/4d1d1709f9fc66eac8dba371d1895b2c7e8b51d1))
+  - 💥 **BREAKING CHANGE:** Docusaurus v3 support was added which means support for MDX v1 has been dropped and support for MDX v3 has been added.
+
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6) - (2023-08-29)
 
 ## 🐛 Bug Fixes
