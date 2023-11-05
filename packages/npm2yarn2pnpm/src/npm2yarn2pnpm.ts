@@ -138,9 +138,3 @@ export const convertNpmToPackageManagers: Plugin<[PluginOptions?]> =
 			(root as Parent).children.unshift(nodeForImport);
 		}
 	};
-
-/**
- * @deprecated This function has been renamed to {@link convertNpmToPackageManagers}. Please update your code.
- * The old name will be removed in the next major release.
- */
-export const npm2yarn2pnpm = convertNpmToPackageManagers;
