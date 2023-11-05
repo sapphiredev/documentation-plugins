@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0) - (2023-11-05)
+
+## 🏠 Refactor
+
+- **npm2yarn2pnpm:** Remove `npm2yarn2pnpm` export ([5844fda](https://github.com/sapphiredev/documentation-plugins/commit/5844fdaa2fab61f3b0663fe2ba9f6d4c25b41dac))
+  - 💥 **BREAKING CHANGE:** Previously deprecated `npm2yarn2pnpm` has been removed. Use the new `convertNpmToPackageManagers` instead.
+
+## 🐛 Bug Fixes
+
+- **deps:** Update unified to 11.0.4 ([376dbfc](https://github.com/sapphiredev/documentation-plugins/commit/376dbfc24a8fe790cbd02343fa9a4a2c25ec0466))
+- **npm2yarn2pnpm:** Add support for Docusaurus V3 ([61f0a04](https://github.com/sapphiredev/documentation-plugins/commit/61f0a041762b1551f6269727d2d7ca733ad332a6))
+  - 💥 **BREAKING CHANGE:** Docusaurus v3 support was added which means support for MDX v1 has been dropped and support for MDX v3 has been added.
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@1.2.0) - (2023-09-16)
 
 ## 🚀 Features
