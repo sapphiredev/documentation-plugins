@@ -1,12 +1,49 @@
-import type { Code, Content, Literal } from 'mdast';
-import type { Plugin } from 'unified';
+import type { Code, Literal, RootContent } from 'mdast';
+import type { MdxJsxAttribute, MdxJsxFlowElement } from 'mdast-util-mdx';
+import type { Plugin, Transformer } from 'unified';
 import type { Node, Parent } from 'unist';
-import visit from 'unist-util-visit';
 import { esm2cjs, ts2esm } from './ts2esm2cjs';
 import type { PluginOptions } from './types';
 
 export { esm2cjs, ts2esm } from './ts2esm2cjs';
 export type { PluginOptions } from './types';
+
+function createAttribute(attributeName: string, attributeValue: MdxJsxAttribute['value']): MdxJsxAttribute {
+	return {
+		type: 'mdxJsxAttribute',
+		name: attributeName,
+		value: attributeValue
+	};
+}
+
+interface CreateTabItemOptions {
+	code: string;
+	node: Code;
+	value: 'cjs' | 'esm' | 'typescript';
+	label: string;
+}
+
+function createTabItem({ code, node, value, label }: CreateTabItemOptions): MdxJsxFlowElement {
+	let [, jsHighlight, tsHighlight] = (node.meta ?? '').split('|');
+
+	if (!tsHighlight && jsHighlight) {
+		tsHighlight = jsHighlight;
+	}
+
+	return {
+		type: 'mdxJsxFlowElement',
+		name: 'TabItem',
+		attributes: [createAttribute('value', value), createAttribute('label', label)],
+		children: [
+			{
+				type: node.type,
+				lang: node.lang,
+				value: code,
+				meta: value === 'typescript' ? `${tsHighlight} showLineNumbers` : `${jsHighlight} showLineNumbers`
+			}
+		]
+	};
+}
 
 /**
  * Transforms a Docusaurus node from TypeScript to ESM and CJS
@@ -15,81 +52,110 @@ export type { PluginOptions } from './types';
  * @returns The transformed node in the form of Tabs.
  */
 const transformNode = (node: Code, options: PluginOptions) => {
-	const groupIdProp = options.sync ? ' groupId="ts2esm2cjs"' : '';
+	const groupIdProp = {
+		type: 'mdxJsxAttribute',
+		name: 'groupId',
+		value: 'ts2esm2cjs'
+	};
 
 	const esmCode = ts2esm(node.value, options);
 	const cjsCode = esm2cjs(esmCode, options);
 
-	let [, jsHighlight, tsHighlight] = (node.meta ?? '').split('|');
-
-	if (!tsHighlight && jsHighlight) {
-		tsHighlight = jsHighlight;
-	}
-
 	return [
 		{
-			type: 'jsx',
-			value: `<Tabs${groupIdProp}
-						defaultValue="typescript"
-						values={[
-							{ label: "JavaScript", value: "javascript" },
-							{ label: "ESM", value: "esm" },
-							{ label: "TypeScript", value: "typescript" },
-						]}
-			>\n<TabItem value="javascript">`
-		},
-		{
-			type: node.type,
-			lang: node.lang,
-			meta: `${jsHighlight} showLineNumbers`,
-			value: cjsCode
-		},
-		{
-			type: 'jsx',
-			value: '</TabItem>\n<TabItem value="esm">'
-		},
-		{
-			type: node.type,
-			lang: node.lang,
-			meta: `${jsHighlight} showLineNumbers`,
-			value: esmCode
-		},
-		{
-			type: 'jsx',
-			value: '</TabItem>\n<TabItem value="typescript">'
-		},
-		{
-			type: node.type,
-			lang: node.lang,
-			meta: `${tsHighlight} showLineNumbers`,
-			value: node.value
-		},
-		{
-			type: 'jsx',
-			value: '</TabItem>\n</Tabs>'
+			type: 'mdxJsxFlowElement',
+			name: 'Tabs',
+			...(options.sync && {
+				attributes: [groupIdProp]
+			}),
+			children: [
+				createTabItem({
+					code: cjsCode,
+					node,
+					value: 'cjs',
+					label: 'CommonJS'
+				}),
+				createTabItem({
+					code: esmCode,
+					node,
+					value: 'esm',
+					label: 'ESM'
+				}),
+				createTabItem({
+					code: node.value,
+					node,
+					value: 'typescript',
+					label: 'TypeScript'
+				})
+			]
 		}
-	] as Content[];
+	] as RootContent[];
 };
 
-const isImport = (node: Node): node is Literal => node.type === 'import';
+const isMdxEsmLiteral = (node: Node): node is Literal => node.type === 'mdxjsEsm';
+const isTabsImport = (node: Node): boolean => isMdxEsmLiteral(node) && node.value.includes('@theme/Tabs');
 const isParent = (node: Node): node is Parent => Array.isArray((node as Parent).children);
 const matchNode = (node: Node): node is Code =>
 	node.type === 'code' && typeof (node as Code).meta === 'string' && ((node as Code).meta ?? '').startsWith('ts2esm2cjs');
-const nodeForImport: Literal = {
-	type: 'import',
-	value: "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
-};
 
-export const ts2esm2cjs: Plugin<[PluginOptions?]> = (
-	{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} } = { sync: true, prettierOptions: {}, typescriptCompilerOptions: {} }
-) => {
-	return (root) => {
+function createImportNode() {
+	return {
+		type: 'mdxjsEsm',
+		value: "import Tabs from '@theme/Tabs'\nimport TabItem from '@theme/TabItem'",
+		data: {
+			estree: {
+				type: 'Program',
+				body: [
+					{
+						type: 'ImportDeclaration',
+						specifiers: [
+							{
+								type: 'ImportDefaultSpecifier',
+								local: { type: 'Identifier', name: 'Tabs' }
+							}
+						],
+						source: {
+							type: 'Literal',
+							value: '@theme/Tabs',
+							raw: "'@theme/Tabs'"
+						}
+					},
+					{
+						type: 'ImportDeclaration',
+						specifiers: [
+							{
+								type: 'ImportDefaultSpecifier',
+								local: { type: 'Identifier', name: 'TabItem' }
+							}
+						],
+						source: {
+							type: 'Literal',
+							value: '@theme/TabItem',
+							raw: "'@theme/TabItem'"
+						}
+					}
+				],
+				sourceType: 'module'
+			}
+		}
+	};
+}
+
+export const ts2esm2cjs: Plugin<[PluginOptions?]> =
+	(
+		{ sync = true, prettierOptions = {}, typescriptCompilerOptions = {} } = { sync: true, prettierOptions: {}, typescriptCompilerOptions: {} }
+	): Transformer =>
+	async (root) => {
+		const { visit } = await import('unist-util-visit');
+
 		let transformed = false;
 		let alreadyImported = false;
+
 		visit(root, (node: Node) => {
-			if (isImport(node) && node.value.includes('@theme/Tabs')) {
+			if (isTabsImport(node)) {
 				alreadyImported = true;
 			}
+
 			if (isParent(node)) {
 				let index = 0;
 				while (index < node.children.length) {
@@ -105,8 +171,8 @@ export const ts2esm2cjs: Plugin<[PluginOptions?]> = (
 				}
 			}
 		});
+
 		if (transformed && !alreadyImported) {
-			(root as Parent).children.unshift(nodeForImport);
+			(root as Parent).children.unshift(createImportNode());
 		}
 	};
-};
