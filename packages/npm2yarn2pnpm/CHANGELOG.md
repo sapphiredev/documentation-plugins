@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1...@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1) - (2023-11-05)
+
+## 🐛 Bug Fixes
+
+- Actually read convertToBun option when assigning tab children ([8577f6e](https://github.com/sapphiredev/documentation-plugins/commit/8577f6ecd0e2c052af8b6992bd90388c8a03e255))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0...@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.0) - (2023-11-05)
 
 ## 🏠 Refactor
