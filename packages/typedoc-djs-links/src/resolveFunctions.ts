@@ -1,42 +1,35 @@
-const baseLink = 'https://discord.js.org/#/docs/discord.js/main/function';
+const baseLink = 'https://discord.js.org/docs/packages/discord.js/main/{{FUNCTION_NAME}}:Function';
 
 const knownFunctions = new Set([
+	'basename',
+	'cleanCodeBlockContent',
+	'cleanContent',
+	'createChannel',
 	'createComponent',
 	'createComponentBuilder',
-	'chatInputApplicationCommandMention',
-	'codeBlock',
-	'inlineCode',
-	'italic',
-	'bold',
-	'underscore',
-	'strikethrough',
-	'quote',
-	'blockQuote',
-	'hideLinkEmbed',
-	'hyperlink',
-	'spoiler',
-	'userMention',
-	'channelMention',
-	'roleMention',
-	'formatEmoji',
-	'channelLink',
-	'messageLink',
-	'time',
-	'toSnakeCase',
-	'flatten',
-	'fetchRecommendedShardCount',
-	'parseEmoji',
-	'verifyString',
-	'resolveColor',
+	'DiscordjsErrorMixin',
 	'discordSort',
-	'cleanContent',
-	'cleanCodeBlockContent',
-	'parseWebhookURL'
+	'fetchRecommendedShardCount',
+	'flatten',
+	'makeError',
+	'makePlainError',
+	'mergeDefault',
+	'moveElementInArray',
+	'parseEmoji',
+	'parseWebhookURL',
+	'PartialTextBasedChannel',
+	'PartialWebhookMixin',
+	'resolveColor',
+	'resolvePartialEmoji',
+	'setPosition',
+	'TextBasedChannelMixin',
+	'verifyString',
+	'WebhookMixin'
 ]);
 
 export function resolveFunctions(name: string): string | undefined {
 	if (knownFunctions.has(name)) {
-		return `${baseLink}/${name}`;
+		return baseLink.replace('{{FUNCTION_NAME}}', name);
 	}
 
 	return undefined;
