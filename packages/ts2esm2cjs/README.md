@@ -32,7 +32,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          remarkPlugins: [[require('@sapphire/docusaurus-plugin-ts2esm2cjs')]]
+          remarkPlugins: [require('@sapphire/docusaurus-plugin-ts2esm2cjs')]
         },
         pages: {
           remarkPlugins: [require('@sapphire/docusaurus-plugin-ts2esm2cjs')]
