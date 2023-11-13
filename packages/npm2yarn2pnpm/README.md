@@ -36,7 +36,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          remarkPlugins: [[require('@sapphire/docusaurus-plugin-npm2yarn2pnpm')]]
+          remarkPlugins: [require('@sapphire/docusaurus-plugin-npm2yarn2pnpm')]
         },
         pages: {
           remarkPlugins: [require('@sapphire/docusaurus-plugin-npm2yarn2pnpm')]
