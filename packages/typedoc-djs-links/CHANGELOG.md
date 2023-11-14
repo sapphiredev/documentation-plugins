@@ -6,35 +6,35 @@ All notable changes to this project will be documented in this file.
 
 ## 🐛 Bug Fixes
 
-- **typedoc-djs-links:** Update export mapping ([f4d930b](https://github.com/sapphiredev/documentation-plugins/commit/f4d930b6431eba3e9dc44bbb134ab826a3f76c5c))
+-   **typedoc-djs-links:** Update export mapping ([f4d930b](https://github.com/sapphiredev/documentation-plugins/commit/f4d930b6431eba3e9dc44bbb134ab826a3f76c5c))
 
 # [typedoc-plugin-djs-links@2.1.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.0.0...typedoc-plugin-djs-links@2.1.0) - (2023-08-29)
 
 ## 🚀 Features
 
-- **typedoc-djs-links:** Add support for typedoc 0.25.x ([3e39402](https://github.com/sapphiredev/documentation-plugins/commit/3e39402f8c2b598c1d5bef93a01c5ff19dbbcab3))
+-   **typedoc-djs-links:** Add support for typedoc 0.25.x ([3e39402](https://github.com/sapphiredev/documentation-plugins/commit/3e39402f8c2b598c1d5bef93a01c5ff19dbbcab3))
 
 # [typedoc-plugin-djs-links@2.0.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.2.0...typedoc-plugin-djs-links@2.0.0) - (2023-04-12)
 
 ## 📝 Documentation
 
-- Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
+-   Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
 
 ## 🚀 Features
 
-- **typedoc-djs-links:** Update to support Typedoc 0.23.x and 0.24.x ([a2c41fe](https://github.com/sapphiredev/documentation-plugins/commit/a2c41fe4b508d55ff88faeb14657802ac64e45cf))
-  - 💥 **BREAKING CHANGE:** This package now requires typedoc 0.23.x or 0.24.x
+-   **typedoc-djs-links:** Update to support Typedoc 0.23.x and 0.24.x ([a2c41fe](https://github.com/sapphiredev/documentation-plugins/commit/a2c41fe4b508d55ff88faeb14657802ac64e45cf))
+    -   💥 **BREAKING CHANGE:** This package now requires typedoc 0.23.x or 0.24.x
 
 # [typedoc-plugin-djs-links@1.2.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.4...typedoc-plugin-djs-links@1.2.0) - (2022-06-29)
 
 ## 🐛 Bug Fixes
 
-- Restore tsup (reverts 7411ff7) ([7df536b](https://github.com/sapphiredev/documentation-plugins/commit/7df536bd871b45d0cfa65816684bc691b4735bc0))
-- Remove tsup ([7411ff7](https://github.com/sapphiredev/documentation-plugins/commit/7411ff79624eec777519a2a049c8d3f026871cac))
+-   Restore tsup (reverts 7411ff7) ([7df536b](https://github.com/sapphiredev/documentation-plugins/commit/7df536bd871b45d0cfa65816684bc691b4735bc0))
+-   Remove tsup ([7411ff7](https://github.com/sapphiredev/documentation-plugins/commit/7411ff79624eec777519a2a049c8d3f026871cac))
 
 ## 🚀 Features
 
-- Allow module: NodeNext ([8221bc2](https://github.com/sapphiredev/documentation-plugins/commit/8221bc2668fd1ad9c2e80c3c6a1503ae27bfc632))
+-   Allow module: NodeNext ([8221bc2](https://github.com/sapphiredev/documentation-plugins/commit/8221bc2668fd1ad9c2e80c3c6a1503ae27bfc632))
 
 ## [1.0.4](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@1.0.3...typedoc-plugin-djs-links@1.0.4) (2022-01-12)
 

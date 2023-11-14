@@ -6,63 +6,63 @@ All notable changes to this project will be documented in this file.
 
 ## 🐛 Bug Fixes
 
-- **deps:** Update unified to 11.0.4 ([376dbfc](https://github.com/sapphiredev/documentation-plugins/commit/376dbfc24a8fe790cbd02343fa9a4a2c25ec0466))
+-   **deps:** Update unified to 11.0.4 ([376dbfc](https://github.com/sapphiredev/documentation-plugins/commit/376dbfc24a8fe790cbd02343fa9a4a2c25ec0466))
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0...@sapphire/docusaurus-plugin-ts2esm2cjs@2.0.0) - (2023-11-05)
 
 ## 🐛 Bug Fixes
 
-- **ts2esm2cjs:** Add support for Docusaurus V3 ([4d1d170](https://github.com/sapphiredev/documentation-plugins/commit/4d1d1709f9fc66eac8dba371d1895b2c7e8b51d1))
-  - 💥 **BREAKING CHANGE:** Docusaurus v3 support was added which means support for MDX v1 has been dropped and support for MDX v3 has been added.
+-   **ts2esm2cjs:** Add support for Docusaurus V3 ([4d1d170](https://github.com/sapphiredev/documentation-plugins/commit/4d1d1709f9fc66eac8dba371d1895b2c7e8b51d1))
+    -   💥 **BREAKING CHANGE:** Docusaurus v3 support was added which means support for MDX v1 has been dropped and support for MDX v3 has been added.
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.6) - (2023-08-29)
 
 ## 🐛 Bug Fixes
 
-- **ts2esm2cjs:** Update export mapping ([69ab926](https://github.com/sapphiredev/documentation-plugins/commit/69ab926773b235aeaad5182c841e9cf92fcb5580))
+-   **ts2esm2cjs:** Update export mapping ([69ab926](https://github.com/sapphiredev/documentation-plugins/commit/69ab926773b235aeaad5182c841e9cf92fcb5580))
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.5) - (2023-08-20)
 
 ## 🐛 Bug Fixes
 
-- **ts2esm2cjs:** Remove dependency on @sapphire/prettier-config ([ef09164](https://github.com/sapphiredev/documentation-plugins/commit/ef09164877ee21fe8c7657b9027c74131092154e))
+-   **ts2esm2cjs:** Remove dependency on @sapphire/prettier-config ([ef09164](https://github.com/sapphiredev/documentation-plugins/commit/ef09164877ee21fe8c7657b9027c74131092154e))
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.3...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.4) - (2023-08-07)
 
 ## 🏠 Refactor
 
-- **ts2esm2cjs:** Split off and export transform `ts2esm` and `esm2cjs` functions ([dcd3630](https://github.com/sapphiredev/documentation-plugins/commit/dcd3630b8fe565f4df1edb4d417104cebd376eab))
+-   **ts2esm2cjs:** Split off and export transform `ts2esm` and `esm2cjs` functions ([dcd3630](https://github.com/sapphiredev/documentation-plugins/commit/dcd3630b8fe565f4df1edb4d417104cebd376eab))
 
 ## 🐛 Bug Fixes
 
-- **ts2esm2cjs:** Switch to @prettier/sync ([72b8bf7](https://github.com/sapphiredev/documentation-plugins/commit/72b8bf7872841984b5901e04ce906352c215d769))
-- **deps:** Update dependency @sapphire/prettier-config to ^1.4.5 ([ca06c4b](https://github.com/sapphiredev/documentation-plugins/commit/ca06c4b3111898fc19c154e0177b607368ce0151))
+-   **ts2esm2cjs:** Switch to @prettier/sync ([72b8bf7](https://github.com/sapphiredev/documentation-plugins/commit/72b8bf7872841984b5901e04ce906352c215d769))
+-   **deps:** Update dependency @sapphire/prettier-config to ^1.4.5 ([ca06c4b](https://github.com/sapphiredev/documentation-plugins/commit/ca06c4b3111898fc19c154e0177b607368ce0151))
 
 ## 📝 Documentation
 
-- Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
+-   Add @vladfrangu as a contributor ([cd26f50](https://github.com/sapphiredev/documentation-plugins/commit/cd26f50dffcd964a86bd0b0431615621a472dba7))
 
 ## 🧪 Testing
 
-- **ts2esm:** Add unit tests ([a2ea21a](https://github.com/sapphiredev/documentation-plugins/commit/a2ea21ac2d94801a054aaa9f17e31b02e80bee02))
+-   **ts2esm:** Add unit tests ([a2ea21a](https://github.com/sapphiredev/documentation-plugins/commit/a2ea21ac2d94801a054aaa9f17e31b02e80bee02))
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.0...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.2) - (2022-07-11)
 
 ## 🐛 Bug Fixes
 
-- Manually set versions ([05f4d16](https://github.com/sapphiredev/documentation-plugins/commit/05f4d16dcd5673a208e4ec191e659b3cbd2dc95a))
+-   Manually set versions ([05f4d16](https://github.com/sapphiredev/documentation-plugins/commit/05f4d16dcd5673a208e4ec191e659b3cbd2dc95a))
 
 # [@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.0](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.3...@sapphire/docusaurus-plugin-ts2esm2cjs@1.1.0) - (2022-05-15)
 
 ## 🐛 Bug Fixes
 
-- Restore tsup (reverts 7411ff7) ([7df536b](https://github.com/sapphiredev/documentation-plugins/commit/7df536bd871b45d0cfa65816684bc691b4735bc0))
-- Remove tsup ([7411ff7](https://github.com/sapphiredev/documentation-plugins/commit/7411ff79624eec777519a2a049c8d3f026871cac))
-- **ts2esm2cjs:** Ensure compatibility with docusaurus v2 beta 20 ([c1c4716](https://github.com/sapphiredev/documentation-plugins/commit/c1c4716ac51f3ad28099dd9bf13dabe064b014bb))
+-   Restore tsup (reverts 7411ff7) ([7df536b](https://github.com/sapphiredev/documentation-plugins/commit/7df536bd871b45d0cfa65816684bc691b4735bc0))
+-   Remove tsup ([7411ff7](https://github.com/sapphiredev/documentation-plugins/commit/7411ff79624eec777519a2a049c8d3f026871cac))
+-   **ts2esm2cjs:** Ensure compatibility with docusaurus v2 beta 20 ([c1c4716](https://github.com/sapphiredev/documentation-plugins/commit/c1c4716ac51f3ad28099dd9bf13dabe064b014bb))
 
 ## 🚀 Features
 
-- Allow module: NodeNext ([8221bc2](https://github.com/sapphiredev/documentation-plugins/commit/8221bc2668fd1ad9c2e80c3c6a1503ae27bfc632))
+-   Allow module: NodeNext ([8221bc2](https://github.com/sapphiredev/documentation-plugins/commit/8221bc2668fd1ad9c2e80c3c6a1503ae27bfc632))
 
 ## [1.0.3](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.2...@sapphire/docusaurus-plugin-ts2esm2cjs@1.0.3) (2022-01-13)
 
