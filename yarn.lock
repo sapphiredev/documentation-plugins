@@ -672,8 +672,8 @@ __metadata:
   linkType: hard
 
 "@favware/cliff-jumper@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@favware/cliff-jumper@npm:2.2.1"
+  version: 2.2.3
+  resolution: "@favware/cliff-jumper@npm:2.2.3"
   dependencies:
     "@sapphire/result": "npm:^2.6.4"
     "@sapphire/utilities": "npm:3.13.0"
@@ -687,7 +687,7 @@ __metadata:
   bin:
     cj: ./dist/cli.js
     cliff-jumper: ./dist/cli.js
-  checksum: 70d361236ec3cffa6afa0f49a73f49383a5107f091505ec29e835e885e8e73ef8b1b4905a191931cc9624573aaf613efea25169356f61b8efa5ac325fac291af
+  checksum: feb00a1e0912a19b959c94cb621b50f80ce58ce595128511f6b61df43c32e807b1ea1525c05990fdff0dedb7a05c61169a059605d26c20ea341dda511ac125e8
   languageName: node
   linkType: hard
 
@@ -980,14 +980,14 @@ __metadata:
   linkType: hard
 
 "@sapphire/discord.js-utilities@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@sapphire/discord.js-utilities@npm:7.0.2"
+  version: 7.0.3
+  resolution: "@sapphire/discord.js-utilities@npm:7.0.3"
   dependencies:
     "@sapphire/discord-utilities": "npm:^3.1.1"
     "@sapphire/duration": "npm:^1.1.0"
     "@sapphire/utilities": "npm:^3.13.0"
     tslib: "npm:^2.6.2"
-  checksum: 8f241404a8812582dc936fbf5ef84c06ef01f156d18862e19cdcf02cec75b8b194342dceb439f12ab1d7ad9401e8388c44c2fc94503e08b825c6dcaea7bc8ac8
+  checksum: 36ba91e5144736f85180ca477d46b2077d10e7239512640d2ab307f352998475a48dbb3158597bf7f22d6d0281592e52d3cc0b0394bc2dda2fad61f6878825b5
   languageName: node
   linkType: hard
 
@@ -6934,8 +6934,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^3.0.0 || ^4.0.0 || ^5.0.0-0, vite@npm:^3.1.0 || ^4.0.0 || ^5.0.0-0":
-  version: 5.0.0-beta.18
-  resolution: "vite@npm:5.0.0-beta.18"
+  version: 5.0.0-beta.19
+  resolution: "vite@npm:5.0.0-beta.19"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -6969,7 +6969,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: ed5a481cd0ab69a6dc6f7d6076c416e0fb371f8b40f396e98f717a2ac60ad2839607a39797b81cbd0389f988c86e734c27d29abdef37bbca59b633cb484f099f
+  checksum: 0f72ad8490df7293d34271185b5c7c734e1aedfee90494c568f6a3d583e98fe89add39622e073ed4e3e8403309fde9dd4bcaf9854fa81b939b91e248aa229767
   languageName: node
   linkType: hard
 
