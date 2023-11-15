@@ -25,17 +25,19 @@ In your `docusaurus.config.js`, for the plugins where you need this feature (doc
 
 ```js
 // docusaurus.config.js
-module.exports = {
+import { ts2esm2cjs } from '@sapphire/docusaurus-plugin-ts2esm2cjs';
+
+export default {
   // ...
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
-          remarkPlugins: [require('@sapphire/docusaurus-plugin-ts2esm2cjs')]
+          remarkPlugins: [ts2esm2cjs]
         },
         pages: {
-          remarkPlugins: [require('@sapphire/docusaurus-plugin-ts2esm2cjs')]
+          remarkPlugins: [ts2esm2cjs]
         },
         blog: {
           // ...
