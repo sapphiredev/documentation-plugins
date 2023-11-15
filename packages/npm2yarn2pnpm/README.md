@@ -29,17 +29,19 @@ In your `docusaurus.config.js`, for the plugins where you need this feature (doc
 
 ```js
 // docusaurus.config.js
-module.exports = {
+import { convertNpmToPackageManagers } from '@sapphire/docusaurus-plugin-npm2yarn2pnpm';
+
+export default {
   // ...
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
-          remarkPlugins: [[require('@sapphire/docusaurus-plugin-npm2yarn2pnpm')]]
+          remarkPlugins: [convertNpmToPackageManagers]
         },
         pages: {
-          remarkPlugins: [require('@sapphire/docusaurus-plugin-npm2yarn2pnpm')]
+          remarkPlugins: [convertNpmToPackageManagers]
         },
         blog: {
           // ...
