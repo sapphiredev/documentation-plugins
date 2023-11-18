@@ -24,7 +24,7 @@ test('Handles Class links', () => {
 	expect(type).toBeInstanceOf(ReferenceType);
 
 	const ref = type as ReferenceType;
-	expect(ref.externalUrl).toBe('https://discord.js.org/#/docs/discord.js/main/class/Client');
+	expect(ref.externalUrl).toBe('https://discord.js.org/docs/packages/discord.js/main/Client:Class');
 });
 
 test('Handles Typedef links', () => {
@@ -34,7 +34,7 @@ test('Handles Typedef links', () => {
 	expect(type).toBeInstanceOf(ReferenceType);
 
 	const ref = type as ReferenceType;
-	expect(ref.externalUrl).toBe('https://discord.js.org/#/docs/discord.js/main/typedef/ClientOptions');
+	expect(ref.externalUrl).toBe('https://discord.js.org/docs/packages/discord.js/main/ClientOptions:Interface');
 });
 
 test('Handles comment links', () => {
@@ -46,25 +46,25 @@ test('Handles comment links', () => {
 		{
 			kind: 'inline-tag',
 			tag: '@link',
-			target: 'https://discord.js.org/#/docs/discord.js/main/class/Guild',
+			target: 'https://discord.js.org/docs/packages/discord.js/main/Guild:Class',
 			text: 'Guild'
 		},
 		{
 			kind: 'inline-tag',
 			tag: '@link',
-			target: 'https://discord.js.org/#/docs/discord.js/main/class/Message',
+			target: 'https://discord.js.org/docs/packages/discord.js/main/Message:Class',
 			text: 'Message'
 		},
 		{
 			kind: 'inline-tag',
 			tag: '@link',
-			target: 'https://discord.js.org/#/docs/discord.js/main/function/hideLinkEmbed',
-			text: 'hideLinkEmbed'
+			target: 'https://discord.js.org/docs/packages/discord.js/main/discordSort:Function',
+			text: 'discordSort'
 		},
 		{
 			kind: 'inline-tag',
 			tag: '@link',
-			target: 'https://discord.js.org/#/docs/discord.js/main/class/User',
+			target: 'https://discord.js.org/docs/packages/discord.js/main/User:Class',
 			text: 'custom'
 		}
 	]);

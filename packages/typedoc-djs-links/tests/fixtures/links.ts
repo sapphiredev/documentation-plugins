@@ -8,7 +8,7 @@ export type DJSClientOptions = ClientOptions;
  * Links:
  * - {@link !Guild}
  * - {@link !Message}
- * - {@link !hideLinkEmbed}
+ * - {@link !discordSort}
  * - {@link !User | custom}
  */
 export const comment = true;

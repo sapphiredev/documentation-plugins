@@ -1,4 +1,4 @@
-const baseLink = 'https://discord.js.org/#/docs/discord.js/main/class';
+const baseLink = 'https://discord.js.org/docs/packages/discord.js/main/{{CLASS_NAME}}:Class';
 
 const knownClasses = new Set([
 	'ActionRow',
@@ -14,6 +14,7 @@ const knownClasses = new Set([
 	'ApplicationRoleConnectionMetadata',
 	'Attachment',
 	'AttachmentBuilder',
+	'AttachmentFlagsBitField',
 	'AutocompleteInteraction',
 	'AutoModerationActionExecution',
 	'AutoModerationRule',
@@ -53,8 +54,13 @@ const knownClasses = new Set([
 	'Component',
 	'ContextMenuCommandInteraction',
 	'DataManager',
+	'DataResolver',
 	'DirectoryChannel',
+	'DiscordjsError',
+	'DiscordjsRangeError',
+	'DiscordjsTypeError',
 	'DMChannel',
+	'DMMessageManager',
 	'Embed',
 	'EmbedBuilder',
 	'Emoji',
@@ -78,6 +84,10 @@ const knownClasses = new Set([
 	'GuildMemberFlagsBitField',
 	'GuildMemberManager',
 	'GuildMemberRoleManager',
+	'GuildMessageManager',
+	'GuildOnboarding',
+	'GuildOnboardingPrompt',
+	'GuildOnboardingPromptOption',
 	'GuildPreview',
 	'GuildPreviewEmoji',
 	'GuildScheduledEvent',
@@ -95,6 +105,7 @@ const knownClasses = new Set([
 	'InviteGuild',
 	'InviteStageInstance',
 	'LimitedCollection',
+	'MediaChannel',
 	'MentionableSelectMenuBuilder',
 	'MentionableSelectMenuComponent',
 	'MentionableSelectMenuInteraction',
@@ -125,14 +136,11 @@ const knownClasses = new Set([
 	'ReactionUserManager',
 	'RichPresenceAssets',
 	'Role',
+	'RoleFlagsBitField',
 	'RoleManager',
 	'RoleSelectMenuBuilder',
 	'RoleSelectMenuComponent',
 	'RoleSelectMenuInteraction',
-	'SelectMenuBuilder',
-	'SelectMenuComponent',
-	'SelectMenuInteraction',
-	'SelectMenuOptionBuilder',
 	'Shard',
 	'ShardClientUtil',
 	'ShardingManager',
@@ -157,6 +165,7 @@ const knownClasses = new Set([
 	'ThreadMember',
 	'ThreadMemberFlagsBitField',
 	'ThreadMemberManager',
+	'ThreadOnlyChannel',
 	'Typing',
 	'User',
 	'UserContextMenuCommandInteraction',
@@ -181,7 +190,7 @@ const knownClasses = new Set([
 
 export function resolveClasses(name: string): string | undefined {
 	if (knownClasses.has(name)) {
-		return `${baseLink}/${name}`;
+		return baseLink.replace('{{CLASS_NAME}}', name);
 	}
 
 	return undefined;
