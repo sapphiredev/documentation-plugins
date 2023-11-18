@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+# [typedoc-plugin-djs-links@2.2.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.2.0...typedoc-plugin-djs-links@2.2.0) - (2023-11-18)
+
+## 🚀 Features
+
+- **typedoc-djs-links:** Update to new discordjs docs (#200) ([bb14ae8](https://github.com/sapphiredev/documentation-plugins/commit/bb14ae8a8d9f34f61173b02e08bddb1d9345d5a2))
+
+## 🧪 Testing
+
+- Fix test config ([7b4a6ab](https://github.com/sapphiredev/documentation-plugins/commit/7b4a6ab7732e5e886a40f31d5adb27874a04e43b))
+
 # [typedoc-plugin-djs-links@2.1.1](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.1.0...typedoc-plugin-djs-links@2.1.1) - (2023-08-29)
 
 ## 🐛 Bug Fixes
