@@ -24,7 +24,7 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.0",
 		"@types/mdast": "^4.0.3",
-		"@types/node": "^20.9.1",
+		"@types/node": "^20.9.2",
 		"@types/unist": "^3.0.2",
 		"@typescript-eslint/eslint-plugin": "^6.11.0",
 		"@typescript-eslint/parser": "^6.11.0",
@@ -68,5 +68,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.0.1"
+	"packageManager": "yarn@4.0.2"
 }
