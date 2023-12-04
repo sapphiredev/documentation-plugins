@@ -62,7 +62,6 @@ const transformNode = (node: Code, options: PluginOptions) => {
 		value: 'npm2yarn2pnpm'
 	};
 
-	// const groupIdProp = options.sync ? ' groupId="npm2yarn2pnpm"' : '';
 	const npmCode = node.value;
 
 	const yarnCode = npmToYarn(node.value);
