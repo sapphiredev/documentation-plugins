@@ -98,7 +98,7 @@ const transformNode = (node: Code, options: PluginOptions) => {
 								node,
 								value: 'bun'
 							})
-					  ]
+						]
 					: [])
 			]
 		}
