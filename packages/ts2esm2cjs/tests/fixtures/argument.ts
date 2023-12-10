@@ -1,9 +1,9 @@
 // TypeScript:
-import { Argument, type PieceContext } from '@sapphire/framework';
+import { Argument } from '@sapphire/framework';
 import { URL } from 'node:url';
 
 export class CoreArgument extends Argument<URL> {
-	public constructor(context: PieceContext) {
+	public constructor(context: Argument.LoaderContext) {
 		super(context, { name: 'hyperlink', aliases: ['url'] });
 	}
 
