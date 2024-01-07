@@ -70,6 +70,6 @@
 		"@favware/cliff-jumper": "^2.2.3",
 		"@sapphire/framework": "^5.0.5",
 		"tsup": "^8.0.1",
-		"vitest": "^1.1.0"
+		"vitest": "^1.1.3"
 	}
 }
