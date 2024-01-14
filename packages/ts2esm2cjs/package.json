@@ -68,8 +68,8 @@
 	},
 	"devDependencies": {
 		"@favware/cliff-jumper": "^2.2.3",
-		"@sapphire/framework": "^5.0.5",
+		"@sapphire/framework": "^5.0.6",
 		"tsup": "^8.0.1",
-		"vitest": "^1.1.3"
+		"vitest": "^1.2.0"
 	}
 }
