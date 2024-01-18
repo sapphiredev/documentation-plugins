@@ -4,23 +4,24 @@
 	"description": "Docusaurus Remark plugin for converting NPM Commands to Yarn and Pnpm",
 	"author": "@sapphire",
 	"license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
+	"main": "dist/cjs/index.cjs",
+	"module": "dist/esm/index.mjs",
+	"types": "dist/cjs/index.d.cts",
 	"exports": {
 		"import": {
-			"types": "./dist/index.d.mts",
-			"default": "./dist/index.mjs"
+			"types": "./dist/esm/index.d.mts",
+			"default": "./dist/esm/index.mjs"
 		},
 		"require": {
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
+			"types": "./dist/cjs/index.d.cts",
+			"default": "./dist/cjs/index.cjs"
 		}
 	},
 	"sideEffects": false,
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
-		"build": "tsup",
+		"build": "tsup && yarn build:rename-cjs-index",
+		"build:rename-cjs-index": "move-file dist/cjs/index.d.ts dist/cjs/index.d.cts",
 		"typecheck": "tsc -p tsconfig.eslint.json",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
@@ -66,6 +67,7 @@
 	},
 	"devDependencies": {
 		"@favware/cliff-jumper": "^2.2.3",
+		"move-file-cli": "^3.0.0",
 		"tsup": "^8.0.1",
 		"typescript": "^5.3.3",
 		"vitest": "^1.2.1"
