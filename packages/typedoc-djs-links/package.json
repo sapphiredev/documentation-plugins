@@ -21,7 +21,7 @@
 	"scripts": {
 		"lint": "eslint src --ext ts --fix",
 		"build": "tsup && yarn build:rename-cjs-index",
-		"build:rename-cjs-index": "move-file dist/cjs/index.d.ts dist/cjs/index.d.cts",
+		"build:rename-cjs-index": "node ../../scripts/rename-cjs-index.mjs",
 		"typecheck": "tsc -p tsconfig.eslint.json",
 		"prepack": "yarn build",
 		"bump": "cliff-jumper",
@@ -68,7 +68,6 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^2.2.3",
 		"discord.js": "^14.14.1",
-		"move-file-cli": "^3.0.0",
 		"tsup": "^8.0.1",
 		"typescript": "^5.3.3",
 		"vitest": "^1.2.1"
