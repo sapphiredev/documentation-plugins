@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+# [@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.2](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.2...@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.2) - (2024-01-19)
+
+## 🐛 Bug Fixes
+
+- Properly split CJS and ESM (#228) ([ea4951c](https://github.com/sapphiredev/documentation-plugins/commit/ea4951cb04eea5f6c5d1882b68e1ae42ed73e3ea))
+
+## 📝 Documentation
+
+- Incorrect syntax in readme of ts2esm2cjs & npm2yarn2pnpm (#203) ([621df18](https://github.com/sapphiredev/documentation-plugins/commit/621df18aaa89d8f82887c5124ebc681cfec8986c))
+
+## 🧪 Testing
+
+- Fix test config ([7b4a6ab](https://github.com/sapphiredev/documentation-plugins/commit/7b4a6ab7732e5e886a40f31d5adb27874a04e43b))
+
 # [@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1](https://github.com/sapphiredev/documentation-plugins/compare/@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1...@sapphire/docusaurus-plugin-npm2yarn2pnpm@2.0.1) - (2023-11-05)
 
 ## 🐛 Bug Fixes
