@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# [typedoc-plugin-djs-links@2.2.1](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.2.1...typedoc-plugin-djs-links@2.2.1) - (2024-01-19)
+
+## 🐛 Bug Fixes
+
+- Properly split CJS and ESM (#228) ([ea4951c](https://github.com/sapphiredev/documentation-plugins/commit/ea4951cb04eea5f6c5d1882b68e1ae42ed73e3ea))
+
 # [typedoc-plugin-djs-links@2.2.0](https://github.com/sapphiredev/documentation-plugins/compare/typedoc-plugin-djs-links@2.2.0...typedoc-plugin-djs-links@2.2.0) - (2023-11-18)
 
 ## 🚀 Features
