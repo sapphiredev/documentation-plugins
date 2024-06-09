@@ -1,3 +1,9 @@
 name: docusaurus-plugin-ts2esm2cjs
 org: sapphire
+install: true
 packagePath: packages/ts2esm2cjs
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: sapphiredev/documentation-plugins

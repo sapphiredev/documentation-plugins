@@ -1,3 +1,9 @@
 name: docusaurus-plugin-npm2yarn2pnpm
 org: sapphire
+install: true
 packagePath: packages/npm2yarn2pnpm
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: sapphiredev/documentation-plugins
