@@ -1,5 +1,11 @@
 name: typedoc-plugin-djs-links
 monoRepo: true
+install: true
 packagePath: packages/typedoc-djs-links
 commitMessageTemplate: 'chore({{name}}): release {{name}}@{{new-version}}'
 tagTemplate: '{{name}}@{{new-version}}'
+identifierBase: false
+pushTag: true
+githubRelease: true
+githubReleaseLatest: true
+githubRepo: sapphiredev/documentation-plugins
