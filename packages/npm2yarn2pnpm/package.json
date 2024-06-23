@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"mdast-util-mdx": "^3.0.0",
-		"unified": "^11.0.4",
+		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0"
 	},
 	"repository": {
@@ -68,7 +68,7 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^4.0.2",
 		"tsup": "^8.1.0",
-		"typescript": "^5.4.5",
+		"typescript": "~5.4.5",
 		"vitest": "^1.6.0"
 	}
 }
