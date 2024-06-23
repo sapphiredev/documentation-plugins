@@ -32,8 +32,8 @@
 		"@prettier/sync": "^0.5.2",
 		"esm-to-cjs": "^1.2.1",
 		"mdast-util-mdx": "^3.0.0",
-		"typescript": "^5.4.5",
-		"unified": "^11.0.4",
+		"typescript": "^5.5.2",
+		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0"
 	},
 	"repository": {
