@@ -1,104 +1,58 @@
 {
-	"name": "@sapphire/shapeshift",
-	"version": "4.0.0",
-	"description": "Blazing fast input validation and transformation ⚡",
-	"author": "@sapphire",
-	"license": "MIT",
-	"main": "dist/cjs/index.cjs",
-	"module": "dist/esm/index.mjs",
-	"browser": "dist/iife/index.global.js",
-	"unpkg": "dist/iife/index.global.js",
-	"types": "dist/cjs/index.d.cts",
-	"exports": {
-		"import": {
-			"types": "./dist/esm/index.d.mts",
-			"default": "./dist/esm/index.mjs"
-		},
-		"require": {
-			"types": "./dist/cjs/index.d.cts",
-			"default": "./dist/cjs/index.cjs"
-		},
-		"browser": "./dist/iife/index.global.js"
-	},
-	"sideEffects": false,
-	"homepage": "https://www.sapphirejs.dev",
+	"name": "root-documentation-plugins",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
-		"lint": "eslint src tests --ext ts --fix",
-		"format": "prettier --write \"{src,tests}/**/*.ts\"",
-		"docs": "typedoc-json-parser",
+		"clean": "rimraf \"packages/**/dist\" \"packages/**/.turbo\"",
+		"lint": "eslint packages --ext mjs,js,ts,tsx --fix",
+		"prettier": "prettier --ignore-path=.prettierignore",
+		"format": "prettier --write \"packages/**/{src,scripts}/**/*.{mjs,ts,js}\"",
 		"test": "vitest run",
-		"build": "tsup && yarn build:rename-cjs-index",
-		"build:rename-cjs-index": "node scripts/rename-cjs-index.mjs",
-		"clean": "rimraf dist",
-		"typecheck": "tsc -p tsconfig.eslint.json",
-		"bump": "cliff-jumper",
-		"check-update": "cliff-jumper --dry-run",
-		"prepack": "yarn build"
-	},
-	"dependencies": {
-		"fast-deep-equal": "^3.1.3",
-		"lodash": "^4.17.21"
+		"build": "turbo run build",
+		"typecheck": "turbo run typecheck",
+		"update": "yarn upgrade-interactive",
+		"check-update": "turbo run check-update"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.3.0",
 		"@commitlint/config-conventional": "^19.2.2",
-		"@favware/cliff-jumper": "^3.0.3",
+		"@favware/cliff-jumper": "^4.0.2",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@sapphire/eslint-config": "^5.0.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
-		"@types/jsdom": "^21.1.7",
-		"@types/lodash": "^4.17.5",
-		"@types/node": "20.13.0",
+		"@types/mdast": "^4.0.4",
+		"@types/node": "^20.14.8",
+		"@types/unist": "^3.0.2",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
 		"@typescript-eslint/parser": "^7.13.1",
-		"@vitest/coverage-v8": "^1.6.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"esbuild-plugins-node-modules-polyfill": "^1.6.4",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.1.3",
-		"jsdom": "^24.1.0",
 		"lint-staged": "^15.2.7",
 		"prettier": "^3.3.2",
 		"rimraf": "^5.0.7",
 		"tsup": "^8.1.0",
+		"turbo": "^2.0.4",
 		"typedoc": "^0.26.1",
-		"typedoc-json-parser": "^10.0.0",
-		"typescript": "~5.4.5",
+		"typescript": "^5.5.2",
+		"vite": "^5.3.1",
 		"vitest": "^1.6.0"
+	},
+	"resolutions": {
+		"acorn": "^8.12.0",
+		"ansi-regex": "^5.0.1",
+		"minimist": "^1.2.8"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sapphiredev/shapeshift.git"
+		"url": "git+https://github.com/sapphiredev/documentation-plugins.git"
 	},
-	"files": [
-		"dist/",
-		"UPGRADING-v3-v4.md"
-	],
 	"engines": {
-		"node": ">=v16"
-	},
-	"keywords": [
-		"@sapphire/shapeshift",
-		"shapeshift",
-		"bot",
-		"typescript",
-		"ts",
-		"yarn",
-		"sapphire",
-		"schema",
-		"validation",
-		"type-checking",
-		"checking",
-		"input-validation",
-		"runtime-validation",
-		"ow",
-		"type-validation",
-		"zod"
-	],
-	"bugs": {
-		"url": "https://github.com/sapphiredev/shapeshift/issues"
+		"node": ">=18.0"
 	},
 	"commitlint": {
 		"extends": [
@@ -113,14 +67,6 @@
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"resolutions": {
-		"@types/node": "20.13.0",
-		"ansi-regex": "^5.0.1",
-		"minimist": "^1.2.8"
 	},
 	"packageManager": "yarn@4.3.1"
 }
