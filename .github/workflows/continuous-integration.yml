@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: CI
 
 on:
   push:
@@ -7,48 +7,29 @@ on:
   pull_request:
 
 jobs:
-  Linting:
+  linting:
     name: Linting
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@v4
-      - name: Add problem matcher
-        run: echo "::add-matcher::.github/problemMatchers/eslint.json"
-      - name: Use Node.js v20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: yarn
-          registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        run: yarn --immutable
-      - name: Run ESLint
-        run: yarn lint --fix=false
+    uses: sapphiredev/.github/.github/workflows/reusable-lint.yml@main
 
-  BuildingAndTesting:
-    name: Building and Testing with node v${{ matrix.node }}
-    runs-on: ubuntu-latest
+  build:
+    name: Building
+    uses: sapphiredev/.github/.github/workflows/reusable-build.yml@main
+
+  test:
+    name: Tests
+    uses: sapphiredev/.github/.github/workflows/reusable-tests.yml@main
+    with:
+      enable-sonar: true
+    secrets:
+      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  typecheck:
+    name: Typecheck node v${{ matrix.node }}
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 19, 20, 21]
-    steps:
-      - name: Checkout Project
-        uses: actions/checkout@v4
-      - name: Add problem matcher
-        run: echo "::add-matcher::.github/problemMatchers/tsc.json"
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: yarn
-          registry-url: https://registry.yarnpkg.org/
-      - name: Install Dependencies
-        run: yarn --immutable
-      - name: Typecheck all packages
-        run: yarn typecheck
-      - name: Build Code
-        run: yarn build
-      - name: Run tests
-        run: yarn test
+        node: [18, 19, 20, 21, 22]
+    uses: sapphiredev/.github/.github/workflows/reusable-typecheck.yml@main
+    with:
+      node-version: ${{ matrix.node }}
