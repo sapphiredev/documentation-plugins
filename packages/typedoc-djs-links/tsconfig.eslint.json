@@ -1,10 +1,9 @@
 {
 	"extends": "./src/tsconfig.json",
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"emitDeclarationOnly": false,
-		"noEmit": true
+		"rootDir": ".",
+		"types": ["vitest/globals"],
+		"lib": ["ESNext", "DOM"]
 	},
-	"include": ["src"]
+	"include": ["src", "tests"]
 }

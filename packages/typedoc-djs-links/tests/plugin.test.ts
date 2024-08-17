@@ -1,6 +1,5 @@
 import { join } from 'node:path';
 import { Application, DeclarationReflection, ProjectReflection, ReferenceType, TSConfigReader, type InlineTagDisplayPart } from 'typedoc';
-import { beforeAll, expect, test } from 'vitest';
 import { load } from '../src/index';
 
 let project: ProjectReflection | undefined;
