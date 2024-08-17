@@ -14,7 +14,7 @@
 		"**/.git/": true
 	},
 	"sonarlint.connectedMode.project": {
-		"connectionId": "https-sonarqube-sapphirejs-dev",
-		"projectKey": "sapphiredev_documentation-plugins_fa074d0b-b733-4f1a-8d80-9682667f27ba"
+		"connectionId": "sapphiredev",
+		"projectKey": "sapphiredev_documentation-plugins"
 	}
 }
