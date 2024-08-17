@@ -19,6 +19,7 @@ node_modules/
 dist/
 .turbo/
 *.tsbuildinfo
+coverage/
 
 # Ignore heapsnapshot and log files
 *.heapsnapshot

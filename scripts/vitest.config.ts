@@ -6,7 +6,11 @@ export const createVitestConfig = (options: UserConfig = {}) =>
 		...options,
 		test: {
 			...options?.test,
-			globals: true
+			globals: true,
+			coverage: {
+				enabled: true,
+				reporter: ['text', 'lcov']
+			}
 		},
 		esbuild: {
 			...options?.esbuild,
