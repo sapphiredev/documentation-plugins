@@ -18,13 +18,13 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.4.0",
 		"@commitlint/config-conventional": "^19.2.2",
-		"@favware/cliff-jumper": "^4.0.3",
+		"@favware/cliff-jumper": "^4.1.0",
 		"@favware/npm-deprecate": "^1.0.7",
 		"@sapphire/eslint-config": "^5.0.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
 		"@types/mdast": "^4.0.4",
-		"@types/node": "^20.16.0",
+		"@types/node": "^20.16.1",
 		"@types/unist": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
 		"@typescript-eslint/parser": "^7.13.1",
@@ -40,7 +40,7 @@
 		"turbo": "^2.0.14",
 		"typedoc": "^0.25.13",
 		"typescript": "~5.4.5",
-		"vite": "^5.4.1",
+		"vite": "^5.4.2",
 		"vitest": "^2.0.5"
 	},
 	"resolutions": {
@@ -69,5 +69,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.4.0"
+	"packageManager": "yarn@4.4.1"
 }
