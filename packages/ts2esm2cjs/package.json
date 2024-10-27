@@ -68,7 +68,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@favware/cliff-jumper": "^4.1.0",
+		"@favware/cliff-jumper": "^5.0.0",
 		"@sapphire/framework": "^5.2.1",
 		"tsup": "^8.3.0",
 		"vitest": "^2.1.3"
