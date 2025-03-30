@@ -24,7 +24,7 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.1",
 		"@types/mdast": "^4.0.4",
-		"@types/node": "^22.13.11",
+		"@types/node": "^22.13.14",
 		"@types/unist": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^7.13.1",
 		"@typescript-eslint/parser": "^7.13.1",
@@ -32,7 +32,7 @@
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^10.1.1",
-		"eslint-plugin-prettier": "^5.2.3",
+		"eslint-plugin-prettier": "^5.2.5",
 		"lint-staged": "^15.5.0",
 		"prettier": "^3.5.3",
 		"rimraf": "^6.0.1",
@@ -40,7 +40,7 @@
 		"turbo": "^2.4.4",
 		"typedoc": "^0.25.13",
 		"typescript": "~5.4.5",
-		"vite": "^6.2.2",
+		"vite": "^6.2.3",
 		"vitest": "^3.0.9"
 	},
 	"resolutions": {
@@ -69,5 +69,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.7.0"
+	"packageManager": "yarn@4.8.0"
 }
