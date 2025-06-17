@@ -69,6 +69,6 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"tsup": "^8.5.0",
 		"typescript": "~5.4.5",
-		"vitest": "^3.2.2"
+		"vitest": "^3.2.4"
 	}
 }
