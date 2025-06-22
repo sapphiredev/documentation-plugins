@@ -29,7 +29,7 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"@prettier/sync": "^0.5.5",
+		"@prettier/sync": "^0.6.1",
 		"esm-to-cjs": "^1.2.1",
 		"mdast-util-mdx": "^3.0.0",
 		"typescript": "~5.4.5",
@@ -71,6 +71,6 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/framework": "^5.3.6",
 		"tsup": "^8.5.0",
-		"vitest": "^3.2.2"
+		"vitest": "^3.2.4"
 	}
 }

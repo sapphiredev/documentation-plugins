@@ -1,4 +1,4 @@
-import { format } from '@prettier/sync';
+import prettier from '@prettier/sync';
 import { runTransform } from 'esm-to-cjs';
 import type { Options } from 'prettier';
 import ts, { type CompilerOptions } from 'typescript';
@@ -55,7 +55,7 @@ const restoreNewLines = (code: string): string => code.replace(/\/\* :newline: \
  * @returns Prettier formatted code
  */
 const prettierFormatCode = (code: string, prettierConfig?: Options) =>
-	format(code, { ...documentationPrettierConfig, ...prettierConfig }).slice(0, -1);
+	prettier.format(code, { ...documentationPrettierConfig, ...prettierConfig }).slice(0, -1);
 
 /**
  * Transpiles input TypeScript code to ESM code.
