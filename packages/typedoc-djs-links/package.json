@@ -67,7 +67,7 @@
 	},
 	"devDependencies": {
 		"@favware/cliff-jumper": "^6.0.0",
-		"discord.js": "^14.24.0",
+		"discord.js": "^14.24.2",
 		"tsup": "^8.5.0",
 		"typescript": "~5.4.5",
 		"vitest": "^3.2.4"
