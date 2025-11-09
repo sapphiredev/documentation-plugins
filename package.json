@@ -40,7 +40,7 @@
 		"turbo": "^2.6.0",
 		"typedoc": "^0.25.13",
 		"typescript": "~5.4.5",
-		"vite": "^7.1.12",
+		"vite": "^7.2.2",
 		"vitest": "^3.2.4"
 	},
 	"resolutions": {
@@ -69,5 +69,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.10.3"
+	"packageManager": "yarn@4.11.0"
 }
