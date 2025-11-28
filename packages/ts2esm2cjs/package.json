@@ -32,7 +32,7 @@
 		"@prettier/sync": "^0.6.1",
 		"esm-to-cjs": "^1.2.1",
 		"mdast-util-mdx": "^3.0.0",
-		"typescript": "~5.4.5",
+		"typescript": "~5.9.3",
 		"unified": "^11.0.5",
 		"unist-util-visit": "^5.0.0"
 	},
@@ -71,6 +71,6 @@
 		"@favware/cliff-jumper": "^6.0.0",
 		"@sapphire/framework": "^5.4.0",
 		"tsup": "^8.5.1",
-		"vitest": "^3.2.4"
+		"vitest": "^4.0.14"
 	}
 }
