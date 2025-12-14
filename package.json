@@ -24,7 +24,7 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@sapphire/ts-config": "^5.0.3",
 		"@types/mdast": "^4.0.4",
-		"@types/node": "^24.10.1",
+		"@types/node": "^24.10.4",
 		"@types/unist": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.18.0",
@@ -40,7 +40,7 @@
 		"turbo": "^2.6.3",
 		"typedoc": "^0.28.14",
 		"typescript": "~5.9.3",
-		"vite": "^7.2.6",
+		"vite": "^7.2.7",
 		"vitest": "^4.0.15"
 	},
 	"resolutions": {
