@@ -40,7 +40,7 @@
 		"turbo": "^2.8.21",
 		"typedoc": "^0.28.14",
 		"typescript": "~5.9.3",
-		"vite": "^7.3.1",
+		"vite": "^8.0.3",
 		"vitest": "^4.1.2"
 	},
 	"resolutions": {
