@@ -28,7 +28,7 @@
 		"@types/unist": "^3.0.3",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.18.0",
-		"@vitest/coverage-v8": "^4.1.8",
+		"@vitest/coverage-v8": "^4.1.9",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^10.1.8",
@@ -41,7 +41,7 @@
 		"typedoc": "^0.28.14",
 		"typescript": "~5.9.3",
 		"vite": "^7.3.1",
-		"vitest": "^4.1.8"
+		"vitest": "^4.1.9"
 	},
 	"resolutions": {
 		"acorn": "^8.17.0",
@@ -69,5 +69,5 @@
 			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
-	"packageManager": "yarn@4.16.0"
+	"packageManager": "yarn@4.17.0"
 }
