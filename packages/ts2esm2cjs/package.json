@@ -70,7 +70,7 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^6.1.0",
 		"@sapphire/framework": "^5.5.1",
-		"tsup": "^8.5.1",
+		"tsup": "^9.0.0",
 		"vitest": "^4.1.12"
 	}
 }
