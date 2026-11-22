@@ -1430,13 +1430,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/ts-config@npm:^5.0.3":
-  version: 5.0.3
-  resolution: "@sapphire/ts-config@npm:5.0.3"
+"@sapphire/ts-config@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@sapphire/ts-config@npm:6.0.0"
   dependencies:
-    tslib: "npm:^2.8.1"
-    typescript: "npm:~5.4.5"
-  checksum: 10/187405f8ca6d46258600220910970cc71832687707394968b477b290e0f48023154a126cfdedfa298b317b3fda563091230a47766a49fd87dea02e7d0c08e1af
+    "@types/node": "npm:*"
+    typescript: "npm:~6.0.3"
+  checksum: 10/e804d8eb8ee96fcb1adf58c11cd8d709d5cd23b5d63f744206e8c4525658812637598183f151d4c33cf9e9f0b1f6312346071f79b7c4c21ea42f2a6fadf2b763
   languageName: node
   linkType: hard
 
@@ -5972,7 +5972,7 @@ __metadata:
     "@favware/npm-deprecate": "npm:^2.0.0"
     "@sapphire/eslint-config": "npm:^5.0.6"
     "@sapphire/prettier-config": "npm:^2.0.0"
-    "@sapphire/ts-config": "npm:^5.0.3"
+    "@sapphire/ts-config": "npm:^6.0.0"
     "@types/mdast": "npm:^4.0.4"
     "@types/node": "npm:^24.19.2"
     "@types/unist": "npm:^3.0.3"
@@ -6646,6 +6646,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:~6.0.3":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/0ef2357a4cffd916b52b683a021cdab0f81eea4e9aa35f2d254581c9a5106da02224e3392e1b0ed42b7a48f80c966e5f52b8e1a27941fa0523c1705a9c2e0330
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A~5.4.5#optional!builtin<compat/typescript>":
   version: 5.4.5
   resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
@@ -6663,6 +6673,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/696e1b017bc2635f4e0c94eb4435357701008e2f272f553d06e35b494b8ddc60aa221145e286c28ace0c89ee32827a28c2040e3a69bdc108b1a5dc8fb40b72e3
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A~6.0.3#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/22b67a18dafedf9b1468b64ca20d9aa02ea61d449b65413d8aa6552aeb63f52ef369e86beb25b6b4c91a803d9726ee5c196f391a9b64201263263410a4223ee6
   languageName: node
   linkType: hard
 
